@@ -14,6 +14,8 @@ MEMBERS:
 [Joe](https://github.com/scottjoseph), 
 [Connor](https://github.com/creaumond)
 
+[Trello](https://trello.com/b/6Br841I0/earshot)
+
 HOW TO INSTALL THE CODE LOCALLY
 
 Ha
