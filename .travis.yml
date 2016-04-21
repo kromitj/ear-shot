@@ -11,3 +11,4 @@ before_script:
   - bundle exec rake db:test:prepare
 bundler_args: --binstubs=./bundler_stubs
 
+sudo: required
