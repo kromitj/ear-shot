@@ -5,6 +5,7 @@ class CreateArtists < ActiveRecord::Migration
       t.integer :user_id
       t.string :hometown
       t.text :bio
+      t.string :profile_picture
 
       t.timestamps null: false
     end

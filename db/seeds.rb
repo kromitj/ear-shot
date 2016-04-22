@@ -7,20 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-User.create(f_name: "Mitch", l_name: "Kroska", username: "kromitj", email: "krosksam8457@hotmail.com", password: "password")
+User.create(f_name: "Mitch", l_name: "Kroska", username: "kromitj", email: "krosksam8457@hotmail.com", password: "password", profile_picture: Faker::Avatar.image("my-own-slug"))
 
-User.create(f_name: "Yaboi", l_name: "ChrissyB", username: "yaboichrissyb", email: "yaboichrissyb@gmail.com", password: "password")
+User.create(f_name: "Yaboi", l_name: "ChrissyB", username: "yaboichrissyb", email: "yaboichrissyb@gmail.com", password: "password", profile_picture: Faker::Avatar.image("my-own-slug"))
 
-Artist.create(name: "$$money makin mitch$$", user_id: 1, hometown: "Minneapolis", bio: "A lot can be said about mitch the money maker.  We'll it to you to do it.")
+Artist.create(name: "$$money makin mitch$$", user_id: 1, hometown: "Minneapolis", bio: "A lot can be said about mitch the money maker.  We'll it to you to do it.", profile_picture: Faker::Avatar.image("my-own-slug"))
 
-Artist.create(name: "The boy yaboi", user_id: 2, hometown: "Chicago", bio: "In west philadelphia born and raised")
+Artist.create(name: "The boy yaboi", user_id: 2, hometown: "Chicago", bio: "In west philadelphia born and raised", profile_picture: Faker::Avatar.image("my-own-slug"))
 
 5.times do
-  Song.create(name: Faker::Hipster.word, url: Faker::Internet.url, artist_id: 1)
+  Song.create(name: Faker::Hipster.word, url: "http://www.w3schools.com/html/horse.mp3", artist_id: 1, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 
 5.times do
-  Song.create(name: Faker::Hacker.noun, url: Faker::Internet.url, artist_id: 2)
+  Song.create(name: Faker::Hacker.noun, url: "http://www.w3schools.com/html/horse.mp3", artist_id: 2, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 
 Location.create(song_id: 1, radius: 1000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
