@@ -1,11 +1,11 @@
 class SessionController < ApplicationController
-
+  skip_before_action :redirect_visitors, only: [ :create, :new]
   def new
     @user = User.new
     if request.xhr?
       render 'session/_new', layout: false
     else
-      render 'new'
+      render 'session/new'
     end
   end
 
