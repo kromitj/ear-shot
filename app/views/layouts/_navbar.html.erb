@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "EarShot", root_path, class: "navbar-brand"%></li>
+        <% if logged_in?%>
+          <li><%= link_to current_user.username, current_user, class: "nav-item nav-link" %></li>
+          <li><%= link_to "Logout", session_logout_path, class: "nav-item nav-link" %></li>
+        <% else %>
+            <li><%= link_to "Login", new_session_path, class: "nav-item nav-link" %></li>
+            <li><%= link_to "Register", new_user_path, class: "nav-item nav-link" %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
