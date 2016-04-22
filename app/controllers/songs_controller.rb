@@ -13,6 +13,7 @@ skip_before_action :redirect_visitors
     else
       @errors = @song.errors.full_messages
       render 'new'
+    end
   end
 
   def update
