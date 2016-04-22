@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 gem 'bcrypt'
+gem 'rails_12factor'
 # gem 'activerecord-postgis-adapter'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
