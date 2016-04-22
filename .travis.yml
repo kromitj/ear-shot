@@ -12,3 +12,8 @@ before_script:
 bundler_args: --binstubs=./bundler_stubs
 
 sudo: required
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: SECRET_API_KEY
