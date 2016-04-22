@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:new, :show, :create] do
-    resources :artists, only: [:show]
-  end
+  resources :users, except: [:index]
+
+   resources :artists do
+      resources :songs, only: [:new, :show, :create, :update, :destroy]
+    end
 
   resources :session, only: [:new, :create,]
   get '/session/logout' => 'session#destroy'

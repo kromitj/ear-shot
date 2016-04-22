@@ -43,15 +43,15 @@ ActiveRecord::Schema.define(version: 20160421204124) do
   create_table "listens", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "song_id"
-    t.string   "long"
-    t.string   "lat"
+    t.float    "long"
+    t.float    "lat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string   "long"
-    t.string   "lat"
+    t.float    "long"
+    t.float    "lat"
     t.float    "radius"
     t.integer  "song_id"
     t.datetime "expiration"
