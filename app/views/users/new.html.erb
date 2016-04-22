@@ -1,0 +1,20 @@
+<section class="sign-in-form-wrapper">
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+      <!-- <%= f.label :first_name, class: "landing-form-label" %> -->
+      <%= f.text_field :f_name, class: "form-control", :placeholder => "First Name", :style => "text-align: Center" %><br>
+
+      <%= f.label :last_name, class: "landing-form-label" %>
+      <%= f.text_field :l_name, class: "form-control", :placeholder => "Smith", :style => "text-align: Center" %>
+      <%= f.label :email, class: "landing-form-label" %>
+      <%= f.text_field :email, class: "form-control", :placeholder => "mrRyanTSmith@cityMayor.com", :style => "text-align: Center" %>
+      <%= f.label :username, class: "landing-form-label" %>
+      <%= f.text_field :username, class: "form-control", :placeholder => "mrRyanTSmith", :style => "text-align: Center" %>
+      <%= f.label :password, class: "landing-form-label" %>
+      <%= f.password_field :password, class: "form-control", :placeholder => "************", :style => "text-align: Center" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-success center-block" %>
+    </div>
+  <% end %>
+</section>

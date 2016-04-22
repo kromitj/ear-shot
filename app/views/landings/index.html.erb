@@ -1,0 +1,19 @@
+<div id="home-jumbo" class="jumbotron text-center">
+  <div class="container">
+    <h1 class="logo">Ear Shot</h1>
+    <%= link_to "Login", new_session_path %>
+    <!-- <a class="btn btn-success btn-lg sign-up-landing-btn" href="/users/new">Sign up </a> -->
+    <%= link_to "Register", new_user_path %>
+    <% if flash[:notice] %>
+      <div class="danger"><%= flash[:notice] %></div>
+    <% end %>
+    <%if @errors%>
+      <ul>
+      <%@errors.each do |error|%>
+        <li class="danger"><%=error%></li>
+        <%end%>
+      </ul>
+    <%end%>
+    <div class="form-holder center-block"></div>
+  </div>
+</div>
