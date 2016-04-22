@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-User.create(f_name: "Mitch", l_name: "Kroska", username: "kromitj", email: "krosksam8457@hotmail.com", password_digest: "password")
+User.create(f_name: "Mitch", l_name: "Kroska", username: "kromitj", email: "krosksam8457@hotmail.com", password: "password")
 
-User.create(f_name: "Yaboi", l_name: "ChrissyB", username: "yaboichrissyb", email: "yaboichrissyb@gmail.com", password_digest: "password")
+User.create(f_name: "Yaboi", l_name: "ChrissyB", username: "yaboichrissyb", email: "yaboichrissyb@gmail.com", password: "password")
 
 Artist.create(name: "$$money makin mitch$$", user_id: 1, hometown: "Minneapolis", bio: "A lot can be said about mitch the money maker.  We'll it to you to do it.")
 

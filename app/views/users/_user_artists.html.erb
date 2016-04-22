@@ -1,0 +1,6 @@
+<h2>My Artists</h2>
+<ul class="user-artists-list">
+  <% @user.artists.each do |artist|%>
+  <li class="user-artist-item"><%= artist.name %></li>
+  <% end %>
+</ul>
