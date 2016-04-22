@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users, except: [:index]
 
-   resources :artists do
-      resources :songs, only: [:new, :show, :create, :update, :destroy]
-    end
+  resources :users, only: [:new, :show, :create]
+  resources :artists, only: [:show, :new, :create] do
+    resources :songs
+  end
 
   resources :session, only: [:new, :create,]
   get '/session/logout' => 'session#destroy'
