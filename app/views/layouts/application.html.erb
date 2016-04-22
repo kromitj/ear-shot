@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <% unless request.env['PATH_INFO'] == '/' %>
+    <%= render "/layouts/navbar"%>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>
