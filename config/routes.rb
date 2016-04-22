@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:new, :show, :create] do
-    resources :artists, only: [:show]
+  resources :users, only: [:new, :show, :create]
+  resources :artists, only: [:show, :new, :create] do
+    resources :songs
   end
 
   resources :session, only: [:new, :create,]
