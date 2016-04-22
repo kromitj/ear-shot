@@ -158,6 +158,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgis-adapter
   bcrypt
   bootstrap-sass (~> 3.3.6)
   byebug
