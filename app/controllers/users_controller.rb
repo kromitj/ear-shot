@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  skip_before_action :redirect_visitors, only: [ :create, :new]
+  skip_before_action :redirect_visitors, only: [ :create, :new, :edit, :destroy, :update]
+
+  def show
+    @user = User.find(params[:id])
+  end
 
   def new
      @user = User.new
@@ -22,15 +26,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-
-  end
-
-  def show
-    @user = User.find(params[:id])
+    @user = User.new
   end
 
   def destroy
-
+    @user.destroy
+    session.delete(:user_id)
+    redirect_to '/'
   end
 
 private
