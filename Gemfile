@@ -2,6 +2,13 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'dotenv-rails', :groups => [:development, :test]
+# gem 'fog-aws'
+gem 'aws-sdk', "~> 1.0"
+gem "paperclip"
+# gem 'carrierwave'
+
+
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
