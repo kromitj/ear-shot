@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :redirect_visitors
+  # before_action :redirect_visitors
   include UsersHelper
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

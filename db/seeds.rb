@@ -16,11 +16,11 @@ Artist.create(name: "$$money makin mitch$$", user_id: 1, hometown: "Minneapolis"
 Artist.create(name: "The boy yaboi", user_id: 2, hometown: "Chicago", bio: "In west philadelphia born and raised", profile_picture: Faker::Avatar.image("my-own-slug"))
 
 5.times do
-  Song.create(name: Faker::Hipster.word, url: "http://www.w3schools.com/html/horse.mp3", artist_id: 1, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
+  Song.create(name: Faker::Hipster.word, url: "http://creaumond.ourea.feralhosting.com/Run%20The%20Jewels%20-%20Banana%20Clipper.mp3", artist_id: 1, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 
 5.times do
-  Song.create(name: Faker::Hacker.noun, url: "http://www.w3schools.com/html/horse.mp3", artist_id: 2, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
+  Song.create(name: Faker::Hacker.noun, url: "http://creaumond.ourea.feralhosting.com/Run%20The%20Jewels%20-%20Banana%20Clipper.mp3", artist_id: 2, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 
 Location.create(song_id: 1, radius: 1000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
@@ -58,7 +58,3 @@ end
 3.times do
   Comment.create(song_id: (6..10).to_a.sample, user_id: 1, content: Faker::Hipster.sentence)
 end
-
-
-
-

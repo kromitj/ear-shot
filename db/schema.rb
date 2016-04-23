@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20160421204124) do
     t.integer  "user_id"
     t.string   "hometown"
     t.text     "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "profile_picture"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160421204124) do
     t.string   "name"
     t.string   "url"
     t.integer  "artist_id"
+    t.string   "artwork"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160421204124) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "profile_picture"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
