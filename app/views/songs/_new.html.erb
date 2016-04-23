@@ -1,0 +1,11 @@
+<%= form_for :song, url: artist_songs_path(@artist) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :file %>
+    <%= f.file_field :file%>
+  </div>
+  <%= f.submit "DROP" %>
+<% end %>

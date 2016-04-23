@@ -21,13 +21,14 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
+
 
   end
 
   def destroy
     @artist.destroy
     redirect_to "/users/#{current_user.id}"
+    @song = Song.new
   end
 
 

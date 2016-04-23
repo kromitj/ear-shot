@@ -5,3 +5,6 @@
 <%=render partial: '/shared/map'%>
 <button id="reset">Reset</button>
 <div>Radius:<span id="radius"></span></div>
+
+<%= render 'songs/new', locals: {song: @song} %>
+
