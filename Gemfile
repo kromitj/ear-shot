@@ -7,6 +7,7 @@ gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 gem 'bcrypt'
 gem 'rails_12factor'
+gem 'geocoder'
 # gem 'activerecord-postgis-adapter'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -28,6 +29,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'travis'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
