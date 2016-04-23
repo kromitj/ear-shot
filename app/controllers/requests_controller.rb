@@ -10,11 +10,16 @@ class RequestsController < ApplicationController
     render :json => @songs, :include => {:artist => {:only => [:name, :hometown, :bio]}}
     @song_list = []
     @user_loc = [params[:latitude], params[:longitude]]
-    @song_loc = [@song.location.latitude, @song.location.longitude]
 
-    if #distance_between(@user_loc, @song_loc) < song radius
+    @test_loc =[40.7484, 73.9857]
+
+    result = distance_between(@user_loc, @test_loc)
+    puts result
+    #@song_loc = [@song.location.latitude, @song.location.longitude]
+
+    #if #distance_between(@user_loc, @song_loc) < song radius
       #@song_list << song object
-    end
+    #end
     #return song list
 
   end
