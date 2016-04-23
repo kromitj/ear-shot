@@ -1,10 +1,11 @@
 class SongController < ApplicationController
 skip_before_action :redirect_visitors
 
-  def new #new_user_artist_song GET    /users/:user_id/artists/:artist_id/songs/new(.:format) songs#new
+  def new
+    @song = Song.new
   end
 
-  def create #user_artist_songs POST   /users/:user_id/artists/:artist_id/songs(.:format)     songs#create
+  def create
     @artist = Artist.find(:artist_id)
     @song = @artist.songs.new(params[:song])
     if @song.save
