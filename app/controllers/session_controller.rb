@@ -16,13 +16,9 @@ class SessionController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
-      if request.xhr?
-        @user
-      else
-        log_in(@user)
-        puts session[:user_id]
-        redirect_to user_path(@user)
-      end
+      log_in(@user)
+      puts session[:user_id]
+      redirect_to user_path(@user)
     else
       flash[:notice] = 'Incorrect username/password input'
       redirect_to '/'
