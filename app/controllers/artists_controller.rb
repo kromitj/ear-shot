@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   def new
-    @song = Song.new
+    render 'new'
   end
 
   def create
