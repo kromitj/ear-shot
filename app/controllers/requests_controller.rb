@@ -7,7 +7,8 @@ class RequestsController < ApplicationController
     # render json: => {:songs => @songs,
     #                                :artists => @artists}
 
-    render :json => @songs, :include => {:artist => {:only => [:name, :hometown, :bio]}}
+    render :json => @songs, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}}
+    # include json location expiration?
 
 
   end
