@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :artists do
     resources :songs
   end
-
+  resources :mobile
   resources :session, only: [:new, :create,]
   get '/session/logout' => 'session#destroy'
 
