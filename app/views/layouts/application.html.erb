@@ -8,13 +8,16 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body >
+  <div class="header">
+    <% unless request.env['PATH_INFO'] == '/' %>
+      <%= render "/layouts/navbar"%>
+    <% end %>
+  </div>
 
-  <% unless request.env['PATH_INFO'] == '/' %>
-    <%= render "/layouts/navbar"%>
-  <% end %>
-
+<div class="main-wrapper center-block">
   <%= yield %>
+</div>
 
 </body>
 </html>

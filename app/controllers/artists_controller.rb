@@ -7,6 +7,7 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
+    # render 'new'
   end
 
   def create
