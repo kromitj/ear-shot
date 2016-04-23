@@ -70,6 +70,10 @@ GEM
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
     ffi (1.9.10)
+<<<<<<< HEAD
+=======
+    geocoder (1.3.4)
+>>>>>>> af36b729bcc2ccec7948c9792dad931dc5c36be7
     gh (0.14.0)
       addressable
       backports
@@ -218,6 +222,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   faker
+  geocoder
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.15)
