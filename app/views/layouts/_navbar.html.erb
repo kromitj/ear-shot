@@ -5,7 +5,7 @@
 
     <ul class="nav navbar-nav navbar-right">
       <% if logged_in?%>
-        <li class="nav-item"><%= link_to "Logout", new_artist_path, class: "nav-link"%></li>
+        <li class="nav-item"><%= link_to "Logout", session_logout_path, class: "nav-link"%></li>
       <% end %>
     </ul>
 </nav>
