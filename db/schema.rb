@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20160423175044) do
     t.string   "url"
     t.integer  "artist_id"
     t.string   "artwork"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
