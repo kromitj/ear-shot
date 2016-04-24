@@ -9,8 +9,8 @@ class SongsController < ApplicationController
   def create
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.new(song_params)
-    p "$$$$$$$$$$$$$$$$$$$$$$$"
-    p params
+    @location = @song.locations.new(params[:location])
+    p @location
     p "$$$$$$$$$$$$$$$$$$$$$$$$$$$"
 
     # @location = @song.locations.new(params)
@@ -18,6 +18,7 @@ class SongsController < ApplicationController
       redirect_to @artist
     end
   end
+# "location"=>{"expiration"=>"2016-04-30T00:00", "long"=>"-87.635238468647", "lat"=>"41.894994021302146", "radius"=>"1000"}},
 
   # def create
   #   @file_data = params[:song][:file]
