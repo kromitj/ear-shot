@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :songs
   end
   resources :mobile
+  resources :comments
   resources :session, only: [:new, :create,]
   get '/session/logout' => 'session#destroy'
 
