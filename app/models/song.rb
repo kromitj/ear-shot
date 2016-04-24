@@ -7,5 +7,6 @@ class Song < ActiveRecord::Base
   has_many :favorites
   has_many :comments
   mount_uploader :attachment, AttachmentUploader
+  accepts_nested_attributes_for :locations
 end
 
