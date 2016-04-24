@@ -51,19 +51,15 @@ var x = document.getElementById("demo");
   google.maps.event.addListener(drawingManager, 'overlaycomplete', function(e) {
   all_overlays.push(e);
   var circle = e.overlay;
-  var radius = circle.radius;
 
   var lat = circle.getCenter().lat();
   var lng = circle.getCenter().lng();
   // set location parameters to hidden field values
-  $("#song_location_long").val(lng);
-  $("#song_location_lat").val(lat);
-  $("#song_location_radius").val(radius);
 
-
+  var radius = circle.getRadius();
   var maxRadius = 1000;
-  var radius = function(circle){
-    if(circle.getRadius() > maxRadius){
+  var checkRadius = function(radius){
+    if( radius > maxRadius){
       circle.setRadius(maxRadius);
       return 1000;
     }
@@ -71,22 +67,14 @@ var x = document.getElementById("demo");
       return circle.radius;
     }
   }
-
-
-
-  // var ajaxRequest = $.ajax({
-  //   method: 'GET',
-  //   url: "/artists/",
-  //   data: radius
-  // })
-
+  $("#song_location_long").val(lng);
+  $("#song_location_lat").val(lat);
+  $("#song_location_radius").val(checkRadius(radius));
+  console.log($("#song_location_radius").val())
   // checks if there's more than one overlay, removes first one from map and array if true
   if (all_overlays.length > 1){
       all_overlays[0].overlay.setMap(null);
       all_overlays.shift(0);
-  }
-  if (radius > maxRadius){
-    circle.setRadius(maxRadius);
   }
 
 
