@@ -1,0 +1,28 @@
+<ion-view name="login-view">
+  <ion-content>
+    <div class="list">
+      <form ng-controller="LoginCtrl" ng-submit="submit()">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+          <input type="text" placeholder= "Email"name="email" ng-model="formData.name">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder= "Password" ng-model="formData.password">
+          <!-- <input type="password" placeholder="Password" ng-model="data.password"> -->
+        </label>
+        <input class="button button-block button-calm" type="submit" value="Submit Form">
+      </form>
+    </div>
+
+    <!-- <form ng-controller="MyCtrl" ng-submit="submit()">
+    <input type="text" name="name" ng-model="formData.name">
+    <input type="text" name="address" ng-model="formData.address">
+    <input type="submit" value="Submit Form">
+</form> -->
+
+    <div class="padding">
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+    </div>
+  </ion-content>
+</ion-view>

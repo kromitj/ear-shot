@@ -1,0 +1,30 @@
+<ion-view view-title="Songs">
+  <ion-content>
+
+  <div class="item item-avatar">
+    <img src="{{song.artwork}}">
+    <h2>{{song.artist.name}} - {{song.name}}</h2>
+    <p>{{song.artist.hometown}}</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="{{song.artwork}}">
+    <p>
+      {{song.artist.name}}
+    </p>
+    <p>
+      {{song.artist.bio}}
+    </p>
+    <audio controls>
+      <source src="{{song.url | trusted}}" type="audio/mpeg">
+    </audio>
+
+    <p>
+      <a href="#/tab/comments/song/{{song.id}}" class="subdued">{{comment.count}} Comments</a>
+    </p>
+  </div>
+
+</div>
+  </ion-content>
+
+</ion-view>

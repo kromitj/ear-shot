@@ -5,8 +5,12 @@ Rails.application.routes.draw do
     resources :songs
   end
   resources :mobile
-  resources :session, only: [:new, :create]
-  get '/logout' => 'session#destroy'
+
+  resources :session
+  resources :comments
+  # resources :session, only: [:new, :create,]
+  get '/session/logout' => 'session#destroy'
+
 
   resources :requests
   # The priority is based upon order of creation: first created -> highest priority.
