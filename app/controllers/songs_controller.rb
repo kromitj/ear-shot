@@ -11,9 +11,6 @@ class SongsController < ApplicationController
     @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment])
     p params[:song][:location]
     @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
-    p @location
-    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-
     # @location = @song.locations.new(params)
     if @song.save && @location.save
       redirect_to @artist
