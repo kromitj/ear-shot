@@ -11,12 +11,13 @@
     <tr>
       <th><h2 class="text-center">My Artists</h2></th>
       <th><button type="button" class="btn btn-success add-artist-btn">
-        <%= link_to "+ Artist", new_artist_path, class: "nav-link "%>
+        <%= link_to "+ Artist", new_artist_path, class: "nav-link " %>
       </button></th>
     </tr>
     <tr>
       <th>Artist</th>
     </tr>
+    <%=@user.artists.first%>
     <% @user.artists.each do |artist|%>
     <tr><td><%= link_to artist.name, artist_path %></td></tr>
     <% end %>
