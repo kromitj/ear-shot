@@ -1,11 +1,20 @@
 <%= form_for :song, url: artist_songs_path(@artist) do |f| %>
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label "Song Name" %>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div id="file">
     <%= f.label :file %>
     <%= f.file_field :file%>
   </div>
+  <%= f.fields_for :location do |location_form| %>
+  <div class="exp">
+    <%= location_form.label :expiration_date %>(Optional)
+    <%= location_form.datetime_local_field :expiration_date%>
+    <%= location_form.hidden_field :long %>
+    <%= location_form.hidden_field :lat  %>
+    <%= location_form.hidden_field :radius %>
+  </div>
+  <%end%>
   <%= f.submit "DROP" %>
 <% end %>
