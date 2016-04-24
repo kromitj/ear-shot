@@ -17,7 +17,6 @@
     <tr>
       <th>Artist</th>
     </tr>
-    <%=@user.artists.first%>
     <% @user.artists.each do |artist|%>
     <tr><td><%= link_to artist.name, artist_path %></td></tr>
     <% end %>

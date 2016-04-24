@@ -1,10 +1,20 @@
 
 <br><br><br><h1><%=@artist.name%></h1>
-<h4>Drop song</h4>
-
+<div id="new-song">
+  <h4>Drop song</h4>
+<p id="demo"></p>
 <%=render partial: '/shared/map'%>
 <button id="reset">Reset</button>
-<div>Radius:<span id="radius"></span></div>
+<br><br>
 
 <%= render 'songs/new', locals: {song: @song} %>
+</div>
+<div id="artist-songs">
+  <h4>Active Songs</h4>
+  <ol>
+  <%@artist.songs.each do |song| %>
+  <li><%=song.name%></li>
+  <%end%>
+</ol>
+</div>
 
