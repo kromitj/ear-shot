@@ -16,7 +16,7 @@ class RequestsController < ApplicationController
       array = []
       array.push(song.locations.first.lat)
       array.push(song.locations.first.long)
-      if distance_between(@user_loc, array) < 5000
+      if distance_between(@user_loc, array) < song.locations.first.radius  
         return_array.push(song)
       else
         p false
