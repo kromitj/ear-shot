@@ -12,5 +12,12 @@ class Song < ActiveRecord::Base
   def location
     [self.locations.first.lat, self.locations.first.long]
   end
-end
 
+  def address_location
+    Geocoder.search([self.location[0].to_s, self.location[1].to_s]).first.address_components[2]["long_name"]
+  end
+
+  def address_street
+    Geocoder.search([self.location[0].to_s, self.location[1].to_s]).first.address_components[1]["short_name"]
+  end
+end
