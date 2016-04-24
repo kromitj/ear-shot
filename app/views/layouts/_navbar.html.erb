@@ -1,11 +1,11 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <!-- Brand and toggle get grouped for better mobile display -->
+<div class="container-fluid">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <!-- Brand and toggle get grouped for better mobile display -->
 
+      <ul class="nav navbar-nav navbar-right">
 
+          <li class="nav-item"><%= link_to "Logout", logout_path, class: "nav-link"%></li>
 
-    <ul class="nav navbar-nav navbar-right">
-      <% if logged_in?%>
-        <li class="nav-item"><%= link_to "Logout", session_logout_path, class: "nav-link"%></li>
-      <% end %>
-    </ul>
-</nav>
+      </ul>
+  </div>
+</div>

@@ -8,5 +8,9 @@ class Song < ActiveRecord::Base
   has_many :comments
   mount_uploader :attachment, AttachmentUploader
   accepts_nested_attributes_for :locations
+
+  def location
+    [self.locations.first.lat, self.locations.first.long]
+  end
 end
 
