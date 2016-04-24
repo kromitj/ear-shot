@@ -25,24 +25,24 @@ RSpec.describe User, type: :model do
         expect(user.password_digest).to_not eq("password")
       end
       it 'a profile picture field' do
-        expect(user.profile_picture).to eq("https://robohash.org/my-own-slug.png?size=300x300&set=set1")
+        expect(user.profile_picture).to match(/\A(https:)/)
       end
     end # end user field props
 
-    describe 'has these assosiations'
+    describe 'has these assosiations: ' do
       let(:user) {User.first}
       it 'has many listens' do
-        expect(user.listens.count).to eq(20)
+        expect(user.listens.first.class).to eq(Listen)
       end
       it 'has many artists' do
-        expect(user.artists.first.name).to eq("$$money makin mitch$$")
+        expect(user.artists.first.class).to eq(Artist)
       end
       it 'has many comments' do
-        expect(user.comments.first.content).to eq("Migas tacos flannel pickled gentrify bicycle rights sartorial.")
+        expect(user.comments.first.class).to eq(Comment)
       end
       it 'has many favorites' do
-        expect(user.favorites.first.song.name).to eq("pixel")
+        expect(user.favorites.first.class).to eq(Favorite)
       end
     end
-
+  end
 end # end model tests

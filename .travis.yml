@@ -3,12 +3,6 @@ rvm:
   - 2.0.0
 env:
   - DB=postgresql
-services:
-  - postgresql
-test:
-adapter: postgresql
-database: travis_ci_test
-
 script:
   - bundle exec rake spec
 before_script:
