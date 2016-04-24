@@ -33,16 +33,19 @@ function initMap(){
   var all_overlays = [];
   google.maps.event.addListener(drawingManager, 'overlaycomplete', function(e) {
   all_overlays.push(e);
-  var circle = e.overlay
-  var radius = circle.radius
-  $("#radius").text(radius + " meters")
+  var circle = e.overlay;
+  var radius = circle.radius;
 
   var lat = circle.getCenter().lat();
   var lng = circle.getCenter().lng();
+  // set location parameters to hidden field values
+  $("#song_location_long").val(lng);
+  $("#song_location_lat").val(lat);
+  $("#song_location_radius").val(radius);
 
-  console.log(radius);
-  console.log(lat);
-  console.log(lng);
+
+
+
 
   // var ajaxRequest = $.ajax({
   //   method: 'GET',
