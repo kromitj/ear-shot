@@ -7,7 +7,6 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
-    # render 'new'
   end
 
   def create
@@ -21,18 +20,16 @@ class ArtistsController < ApplicationController
   end
 
   def show
-
-
+    @artist = Artist.find(params[:id])
   end
 
   def destroy
+    @artist = Artist.find(params[:id])
     @artist.destroy
-    redirect_to "/users/#{current_user.id}"
-    @song = Song.new
+    redirect_to root_path
   end
 
-
-  private
+private
 
   def artist_params
     params.require(:artist).permit(:name, :hometown, :bio, :profile_picture)

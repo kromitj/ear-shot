@@ -15,29 +15,26 @@ class SessionController < ApplicationController
   end
 
   def create
-    p user_params
     @user = User.find_by(username: user_params[:username])
-    p @user
-    p "%%%%%%%%%%%%%%%%%%%%%"
     if @user && @user.authenticate(user_params[:password])
-      p "hello"
       log_in(@user)
       redirect_to user_path(@user)
     else
       flash[:notice] = 'Incorrect username/password input'
-      redirect_to '/'
+      redirect_to root_path
     end
   end
 
   def destroy
     session.clear
-    redirect_to '/'
+    redirect_to root_path
   end
 
-  private
-    def user_params
-      params.require(:session).permit(:username, :password)
-    end
+private
+
+  def user_params
+    params.require(:session).permit(:username, :password)
+  end
 
 
 end
