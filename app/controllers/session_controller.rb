@@ -15,12 +15,8 @@ class SessionController < ApplicationController
   end
 
   def create
-    p user_params
     @user = User.find_by(username: user_params[:username])
-    p @user
-    p "%%%%%%%%%%%%%%%%%%%%%"
     if @user && @user.authenticate(user_params[:password])
-      p "hello"
       log_in(@user)
       redirect_to user_path(@user)
     else

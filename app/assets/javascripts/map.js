@@ -1,18 +1,35 @@
 // $(document).ready(function(){
 var map;
 var circle;
+var lat;
+
 function initMap(){
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 12
-  });
+// var position;
+var x = document.getElementById("demo");
+  // function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(createMap);
+      } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+  // }
+  // getLocation();
+
+  function createMap(position) {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: position.coords.latitude, lng: position.coords.longitude},
+      zoom: 13
+    });
+
+
+
   var drawingManager = new google.maps.drawing.DrawingManager({
     drawingMode: google.maps.drawing.OverlayType.MARKER,
     drawingControl: true,
     drawingControlOptions: {
       position: google.maps.ControlPosition.TOP_CENTER,
       drawingModes: [
-      google.maps.drawing.OverlayType.MARKER,
+      // google.maps.drawing.OverlayType.MARKER,
       google.maps.drawing.OverlayType.CIRCLE,
       // google.maps.drawing.OverlayType.POLYGON,
       // google.maps.drawing.OverlayType.POLYLINE,
@@ -25,7 +42,7 @@ function initMap(){
       fillOpacity: .6,
       strokeWeight: 1,
       clickable: true,
-      editable: true,
+      editable: false,
       zIndex: 1
     }
   });
@@ -44,6 +61,16 @@ function initMap(){
   $("#song_location_radius").val(radius);
 
 
+  var maxRadius = 1000;
+  var radius = function(circle){
+    if(circle.getRadius() > maxRadius){
+      circle.setRadius(maxRadius);
+      return 1000;
+    }
+    else{
+      return circle.radius;
+    }
+  }
 
 
 
@@ -58,6 +85,11 @@ function initMap(){
       all_overlays[0].overlay.setMap(null);
       all_overlays.shift(0);
   }
+  if (radius > maxRadius){
+    circle.setRadius(maxRadius);
+  }
+
+
   if (e.type != google.maps.drawing.OverlayType.MARKER) {
   // Switch back to non-drawing mode after drawing a shape.
   drawingManager.setDrawingMode(null);
@@ -73,13 +105,14 @@ function initMap(){
 
 
   });
-
-  $("#reset").on("click",function(){
+$("#reset").on("click",function(){
     for (var i=0; i < all_overlays.length; i++){
       all_overlays[i].overlay.setMap(null);
     }
       all_overlays = [];
   });
+}
+
  }
 
 
