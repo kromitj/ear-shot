@@ -15,9 +15,10 @@ class SessionController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:username])
+    p @user
     if @user && @user.authenticate(params[:password])
       log_in(@user)
-      puts session[:user_id]
+      session[:user_id]
       redirect_to user_path(@user)
     else
       flash[:notice] = 'Incorrect username/password input'
@@ -26,8 +27,14 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    log_out
+    session.clear
     redirect_to '/'
   end
+
+  private
+    def user_params
+      params.require(:user).permit(:username, :password)
+    end
+
 
 end
