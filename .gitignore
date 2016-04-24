@@ -28,7 +28,7 @@
 
 # OS generated files #
 ######################
-*.env
+.env
 .DS_Store
 .DS_Store?
 ._*
