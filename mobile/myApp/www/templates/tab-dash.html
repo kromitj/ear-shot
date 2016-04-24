@@ -1,0 +1,26 @@
+<ion-view view-title="Dashboard">
+  <!-- <ion-content class="padding">
+
+
+    <button type="button" name="button" ng-click="test()">test</button>
+    <ion-item ng-repeat="song in songs" href="#/tab/songs/{{song.id}}">
+      {{song.name}}
+    </ion-list>
+  </ion-content> -->
+
+  <ion-content>
+
+      <div class="list">
+
+        <a ng-repeat="song in songs"
+           href="#/tab/songs/{{song.id}}"
+           class="item item-thumbnail-left">
+          <img ng-src="{{ song.artwork }}">
+          <h2>{{ song.name }}</h2>
+          <h4>{{ song.artist.name }}</h4>
+        </a>
+
+      </div>
+
+    </ion-content>
+</ion-view>

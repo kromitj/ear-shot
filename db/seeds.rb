@@ -23,11 +23,11 @@ end
   Song.create(name: Faker::Hacker.noun, attachment: "http://creaumond.ourea.feralhosting.com/Run%20The%20Jewels%20-%20Banana%20Clipper.mp3", artist_id: 2, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 
-Location.create(song_id: 1, radius: 1000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 2, radius: 2000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 3, radius: 3000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 4, radius: 1000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 5, radius: 2000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
+Location.create(song_id: 1, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 2, radius: 2000, long: -87.6371722, lat:  41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 3, radius: 3000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 4, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 5, radius: 2000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 6, radius: 3000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
 Location.create(song_id: 7, radius: 1000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
 Location.create(song_id: 8, radius: 2000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
