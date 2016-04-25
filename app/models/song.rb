@@ -15,20 +15,20 @@ class Song < ActiveRecord::Base
 
   validates :name, :attachment, presence: true
 
-  def location
-    [self.locations.first.lat, self.locations.first.long]
+  def song_location
+    self.locations.first.lat.to_s + ", " + self.locations.first.long.to_s
+  end
+
+  def address
+    Geocoder.search(self.song_location).first.address_components
   end
 
   def address_location
-    Geocoder.search([self.location[0].to_s, self.location[1].to_s]).first.address_components[2]["long_name"]
+    self.address[2]["long_name"]
   end
 
-  def address_street
-    Geocoder.search([self.location[0].to_s, self.location[1].to_s]).first.address_components[1]["short_name"]
-  end
-
-    def address_state
-    Geocoder.search([self.location[0].to_s, self.location[1].to_s]).first.address_components[3]["short_name"]
+  def address_city
+    self.address[3]["short_name"]
   end
 
   def expire
