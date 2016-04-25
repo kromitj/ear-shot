@@ -9,6 +9,9 @@ class Song < ActiveRecord::Base
   mount_uploader :attachment, AttachmentUploader
   accepts_nested_attributes_for :locations
 
+  validates :name, presence: true
+  # validates :attachment, uniqueness: true
+
   def location
     [self.locations.first.lat, self.locations.first.long]
   end
