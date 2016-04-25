@@ -8,19 +8,39 @@
 /style.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMxrwns8Hvjk3ax8QTAYxei7Ilpen3AM&libraries=drawing&callback=initMap" async defer></script>
-
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+    rel="stylesheet" type="text/css">
 
   <%= csrf_meta_tags %>
 </head>
-<body >
-  <div class="container-fluid">
-    <!-- <div class="row header"> -->
- <% if logged_in? %>
-        <%= render "layouts/navbar"%>
-      <% end %>
-    </div>
+<body>
 
-    <div class="main-wrapper center-block">
+ <% if logged_in? %>
+   <div class="navbar navbar-default navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="font-size:55px;"><span>EarShot</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item" style="font-size:20px;"><%= link_to "Profile", user_path, class: "nav-link"%></li>
+            <li class="nav-item" style="font-size:20px;"><%= link_to "Logout", session_logout_path, class: "nav-link"%></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <% end %>
+    <div>
       <%= yield %>
     </div>
   </div>
