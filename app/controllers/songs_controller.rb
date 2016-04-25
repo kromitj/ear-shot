@@ -13,8 +13,10 @@ class SongsController < ApplicationController
     p "$$$$$$$$$$$$$$$$$$$$$"
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment], artwork: params[:song][:artwork])
-    file_data = params[:song][:attachment]
-    obj = S3_BUCKET.objects.create("#{@artist.name}: #{params[:song][:name]}", file_data.tempfile)
+    song_data = params[:song][:attachment]
+    art_data = params[:song][:artwork]
+    song_obj = S3_BUCKET.objects.create("#{@artist.name}: #{params[:song][:name]}", song_data.tempfile)
+    art_obj = S3_BUCKET.objects.create("#{@artist.name}: #{params[:song][:name]}(Artwork)", art_data.tempfile)
     @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
     if @song.save && @location.save
       redirect_to @artist
@@ -23,20 +25,7 @@ class SongsController < ApplicationController
       render "/artists/show"
     end
   end
-# "location"=>{"expiration"=>"2016-04-30T00:00", "long"=>"-87.635238468647", "lat"=>"41.894994021302146", "radius"=>"1000"}},
 
-  # def create
-  #   @file_data = params[:song][:file]
-  #   @artist = Artist.find(params[:artist_id])
-  #   obj = S3_BUCKET.objects.create(params[:song][:name], @file_data.tempfile)
-  #   @song = @artist.songs.new(url: obj.public_url, name: params[:song][:name])
-  #   if @song.save
-  #     redirect_to @artist
-  #   else
-  #     @errors = @song.errors.full_messages
-  #     redirect_to @artist
-  #   end
-  # end
 
   def show
     @song = Song.find(params[:id])

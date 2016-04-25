@@ -23,6 +23,8 @@ end
   Song.create(name: Faker::Hacker.noun, attachment: "http://creaumond.ourea.feralhosting.com/Run%20The%20Jewels%20-%20Banana%20Clipper.mp3", artist_id: 2, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 
+Song.create(name:"Father Stretch my hands", attachment: "https://s3.amazonaws.com/ear-shot-mp3/The+boy+yaboi%3A+Father", artist_id: 2, artwork: "https://s3.amazonaws.com/ear-shot-mp3/The+boy+yaboi%3A+KANYE+BABY+ARTWORK")
+
 Location.create(song_id: 1, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 2, radius: 500, long: -87.6371722, lat:  41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 3, radius: 200, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))

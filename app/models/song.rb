@@ -8,8 +8,8 @@ class Song < ActiveRecord::Base
 
   # mount_uploader :attachment, AttachmentUploader
 
-  has_attached_file :artwork
-  validates_attachment_content_type :artwork, :content_type => ["image/html", "image/jpg", "image/png", "image/jpeg"]
+  # has_attached_file :artwork
+  # validates_attachment_content_type :artwork, :content_type => ["image/html", "image/jpg", "image/png", "image/jpeg"]
 
   accepts_nested_attributes_for :locations
 
