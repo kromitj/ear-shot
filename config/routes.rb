@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :songs
   end
   resources :mobile
+  resources :favorites
 
   resources :session, except: [:destroy]
   resources :comments
