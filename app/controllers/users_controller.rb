@@ -27,7 +27,22 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.new
+    @user = User.find(params[:id])
+    if request.xhr?
+      render '_edit_user', layout: false, locals: {user: @user}
+    else
+      render 'edit'
+    end
+  end
+
+  def update
+    puts params
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to show
+    else
+      render 'edit'
+    end
   end
 
   def destroy
