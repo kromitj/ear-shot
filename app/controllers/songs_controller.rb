@@ -10,9 +10,9 @@ class SongsController < ApplicationController
   def create
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment], artwork: params[:song][:artwork])
-    p params[:song][:location]
+    obj = remote_upload(@song)
+    puts obj
     @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
-    # @location = @song.locations.new(params)
     if @song.save && @location.save
       redirect_to @artist
     else

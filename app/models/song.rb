@@ -12,6 +12,10 @@ class Song < ActiveRecord::Base
   validates :name, presence: true
   # validates :attachment, uniqueness: true
 
+  def remote_upload(song)
+    S3_BUCKET.objects.create(song, @file_data.tempfile)
+  end
+
   def location
     [self.locations.first.lat, self.locations.first.long]
   end
