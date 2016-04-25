@@ -29,6 +29,7 @@ Location.create(song_id: 1, radius: 1000, long: -87.6371722, lat: 41.88923459999
 Location.create(song_id: 2, radius: 500, long: -87.6371722, lat:  41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 3, radius: 200, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 4, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+
 Location.create(song_id: 5, radius: 800, long: -87.6371722, lat: 42.0889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 6, radius: 200,  long: -87.6371722, lat: 41.9234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 7, radius: 1000,  long: -88.6371722, lat: 41.89234599999995, expiration: Faker::Date.forward(7))
@@ -43,6 +44,7 @@ end
 
 20.times do
   Listen.create(user_id: 1, song_id: (6..10).to_a.sample,  long: -87.71722, lat: 41.4599999995)
+
 end
 
 5. times do

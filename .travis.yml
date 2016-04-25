@@ -15,8 +15,8 @@ sudo: required
 deploy:
   provider: heroku
   app: evening-gorge-29235
-  # tag: true
   api_key:
     secure: cowiMS/7h41qf4Svx0VA2fbd1yzOOoeBPGc9kArGQ3Fnl4lp8no1FknpdpQHd/2GcIBkVaUnTb2xY/PNd02setFsBhMCSv61iLiwMCef/m7ErMWNof9tKLuKgouBOK1pVUDoZjVH2SEoEa0OTU3YHjcjVezkdYdf5t1UDDBo4z4jl0dsoVpCqoSLfOXuFtSAMOfxQrw+BMyjuTitRCVT+H+KRUO6PEntLLZJgAzeVSymSysgACwfftQabICfRxLoJ1jwbwYcXQR4GBYEBoG8oKSytrs6Di5EBgQzGrDZMgO6O89Z/tXmt5wrOeiVOh62xYiIHRFw/uf2aMKkMwW0xaLmtSzuH+Qg//Uj6t9EwlO9sZvV0E11pOeLo+Qe751OPD9gFPoL/QPG6VapiNRrPQUoQc6Q9wxLR2/Q79cijxVESwX2C6TcPB5cv1BiQc8OwHx5QuSRyOthIJWtEPH6k9Sg2c+Fy2XO0WwBWCucE1HHXkOa6rVS1ZogMRp3n5muVpMMOrxAyaS0kekuTEuBH3xJdRot3+tHdZ8ak6fL9RXkCDSrhOcA2uxti8TIh8pOCvbkg8+gBGiSe4HLLKwA1obBbSluNj7BrceiDR8etVLC6emW4GfQY9q3qwrOykX5gTB4wOCQKAAyDOa90SEX92Nf/jxCK5rwQLhlem6q0uw=
-  all_branches: true
   run: "rake db:migrate"
+  on:
+    all_branches: true
