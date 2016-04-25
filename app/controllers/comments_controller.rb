@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+
+  def index
+    @comments = Comment.all
+    render :json => @comments, :include => {:song => {:only => [:name, :artwork]}, :user => {:only => [:profile_picture]}}
+  end
   def new
     @comment = Comment.new
   end
