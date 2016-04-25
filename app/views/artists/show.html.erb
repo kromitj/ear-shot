@@ -12,8 +12,21 @@
 <div id="artist-songs">
   <h4>Active Songs</h4>
   <ol>
-  <%@artist.songs.each do |song| %>
-  <li><%=song.name%></li>
+  <% @artist.songs.each do |song| %>
+  <li>
+    Title: <%= link_to song.name, artist_song_path(@artist, song) %><br>
+    <!--<%= song.locations.first.radius %><br>-->
+    Location: <%= song.address_street %> - <%= song.address_location%>, <%= song.address_state %><br>
+    Expiration Date:
+      <% if song.expire != nil %>
+        <%= song.expire.strftime("%b %d, %Y at %I:%M%p") %>
+      <% else %>
+        "Music never really dies."
+      <% end %>
+
+    <br><br>
+
+  </li>
   <%end%>
 </ol>
 </div>

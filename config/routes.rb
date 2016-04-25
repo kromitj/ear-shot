@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   end
   resources :mobile
 
-  resources :session
+  # resources :session
   resources :comments
-  # resources :session, only: [:new, :create,]
-  get '/session/logout' => 'session#destroy'
+  resources :session, only: [:new, :create]
+  get '/logout' => 'session#destroy'
 
 
   resources :requests
