@@ -26,6 +26,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     session.clear
     redirect_to root_path
   end
