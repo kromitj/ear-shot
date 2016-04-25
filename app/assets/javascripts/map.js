@@ -22,7 +22,7 @@ var x = document.getElementById("demo");
 
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input)
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(input)
 
    map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
@@ -71,7 +71,7 @@ var x = document.getElementById("demo");
     drawingMode: google.maps.drawing.OverlayType.MARKER,
     drawingControl: true,
     drawingControlOptions: {
-      position: google.maps.ControlPosition.TOP_CENTER,
+      position: google.maps.ControlPosition.TOP_RIGHT,
       drawingModes: [
       // google.maps.drawing.OverlayType.MARKER,
       google.maps.drawing.OverlayType.CIRCLE,
@@ -90,6 +90,8 @@ var x = document.getElementById("demo");
       zIndex: 1
     }
   });
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input)
+
   drawingManager.setMap(map);
   var all_overlays = [];
   google.maps.event.addListener(drawingManager, 'overlaycomplete', function(e) {
@@ -101,11 +103,11 @@ var x = document.getElementById("demo");
   // set location parameters to hidden field values
 
   var radius = circle.getRadius();
-  var maxRadius = 1000;
+  var maxRadius = 5000;
   var checkRadius = function(radius){
     if( radius > maxRadius){
       circle.setRadius(maxRadius);
-      return 1000;
+      return maxRadius;
     }
     else{
       return circle.radius;
@@ -141,10 +143,9 @@ $("#reset").on("click",function(){
       all_overlays[i].overlay.setMap(null);
     }
       all_overlays = [];
-  });
+    });
+  }
 }
-
- }
 
 
 
