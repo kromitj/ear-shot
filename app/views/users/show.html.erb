@@ -1,9 +1,33 @@
+<div class="section section-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="<%=@user.profile_picture%>"
+            class="img-responsive">
+          </div>
+          <div class="col-md-6">
+            <h1>Welcome <%=@user.username%></h1>
+            <h3>Favorites Songs </h3>
+            <% @user.favorites.each do |fav| %>
+            <p><%= fav.song.name %></p>
+            <p>Created by: <%= fav.song.artist.name %></p>
+            <%end%>
+            <table class="table">
+              <tr>
+                <th>Artist Page</th>
+              </tr>
+              <% @user.artists.each do |artist|%>
+              <tr><td><%= link_to artist.name, artist_path %></td></tr>
+              <% end %>
 
 
-<br><br><br><br>
-<h1>Welcome <%=@user.username%></h1>
-<%= render 'user_artists', locals: { user: @user} %>
-<!-- list user's personal artists, provide links to artist pages -->
-<!-- become an artist link, supply artist info -->
-<!-- upload song NEED MAPS API -->
-
+            </table>
+            <p>
+              <button type="button" class="btn btn-success add-artist-btn">
+                <%= link_to "Create Artist", new_artist_path, class: "nav-link " %>
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div
