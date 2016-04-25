@@ -49,10 +49,21 @@ html,body{
 .user-artist-module {
   border: 1px solid black;
 }
+
 #new-song{
 width: 50%;
   float:left;
 }
 #artist-songs{
   float:right;
+
+}
+
+.errors{
+  list-style-type: none;
+  color: red;
+  margin-left: -40px;
+}
+.flash{
+  color: red;
 }

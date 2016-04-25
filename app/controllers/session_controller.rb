@@ -21,19 +21,21 @@ class SessionController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:notice] = 'Incorrect username/password input'
-      redirect_to '/'
+      redirect_to root_path
     end
   end
 
   def destroy
+    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     session.clear
-    redirect_to '/'
+    redirect_to root_path
   end
 
-  private
-    def user_params
-      params.require(:session).permit(:username, :password)
-    end
+private
+
+  def user_params
+    params.require(:session).permit(:username, :password)
+  end
 
 
 end

@@ -9,15 +9,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body >
-  <div class="header">
-    <% unless request.env['PATH_INFO'] == '/' %>
-      <%= render "/layouts/navbar"%>
-    <% end %>
+  <div class="container-fluid">
+    <!-- <div class="row header"> -->
+ <% if logged_in? %>
+        <%= render "layouts/navbar"%>
+      <% end %>
+    </div>
+
+    <div class="main-wrapper center-block">
+      <%= yield %>
+    </div>
   </div>
-
-<div class="main-wrapper center-block">
-  <%= yield %>
-</div>
-
 </body>
 </html>

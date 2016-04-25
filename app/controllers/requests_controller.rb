@@ -29,6 +29,8 @@ class RequestsController < ApplicationController
 
     result = distance_between(@user_loc, @test_loc)
     puts result
+    #@song_loc = @song.location
+
     #@song_loc = [@song.location.latitude, @song.location.longitude]
     #
     # if distance_between(@user_loc, @song_loc) < song radius

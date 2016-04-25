@@ -11,7 +11,7 @@ User.create(f_name: "Mitch", l_name: "Kroska", username: "kromitj", email: "kros
 
 User.create(f_name: "Yaboi", l_name: "ChrissyB", username: "yaboichrissyb", email: "yaboichrissyb@gmail.com", password: "password", profile_picture: Faker::Avatar.image("my-own-slug"))
 
-Artist.create(name: "$$money makin mitch$$", user_id: 1, hometown: "Minneapolis", bio: "A lot can be said about mitch the money maker.  We'll it to you to do it.", profile_picture: Faker::Avatar.image("my-own-slug"))
+Artist.create(name: "$$money makin mitch$$", user_id: 1, hometown: "Minneapolis", bio: "A lot can be said about mitch the money maker.  We'll leave it to you to do it.", profile_picture: Faker::Avatar.image("my-own-slug"))
 
 Artist.create(name: "The boy yaboi", user_id: 2, hometown: "Chicago", bio: "In west philadelphia born and raised", profile_picture: Faker::Avatar.image("my-own-slug"))
 
@@ -24,15 +24,15 @@ end
 end
 
 Location.create(song_id: 1, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
-Location.create(song_id: 2, radius: 2000, long: -87.6371722, lat:  41.889234599999995, expiration: Faker::Date.forward(7))
-Location.create(song_id: 3, radius: 3000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 2, radius: 500, long: -87.6371722, lat:  41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 3, radius: 200, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 4, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
-Location.create(song_id: 5, radius: 2000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
-Location.create(song_id: 6, radius: 3000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
+Location.create(song_id: 5, radius: 800, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 6, radius: 200, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
 Location.create(song_id: 7, radius: 1000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 8, radius: 2000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 9, radius: 3000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 10, radius: 5000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
+Location.create(song_id: 8, radius: 800, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
+Location.create(song_id: 9, radius: 200, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
+Location.create(song_id: 10, radius: 400, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
 
 
 20.times do

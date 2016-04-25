@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails', :groups => [:development, :test], :require => 'dotenv/rails-now'
 # gem 'fog-aws'
 gem 'aws-sdk', "~> 1.0"
 gem "paperclip"
@@ -14,6 +14,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 
 gem 'rails', '4.2.6'
+
 gem 'responders'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
@@ -30,12 +31,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'rspec'
 gem "rspec-rails"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'faker'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
