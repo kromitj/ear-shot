@@ -36,7 +36,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    puts params
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to show
