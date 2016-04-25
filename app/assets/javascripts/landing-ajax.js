@@ -2,15 +2,21 @@ $( document ).ready(function() {
    $('.sign-in-btn').on('click', function(event) {
     event.preventDefault();
     var $link = $(this);
-    console.log("login link" + $link.attr("href"));
+
+    // console.log("login link" + $link.attr("href"));
     var ajaxRequest = $.ajax({
       url: $link.attr("href"),
-      type: 'get'
+      // type: 'get'
     });
 
     ajaxRequest.done(function (formHtml) {
-      console.log(formHtml);
-      $('.form-holder').html(formHtml)
+      // console.log(formHtml);
+      $link.hide();
+      $(".register-btn").hide();
+      $(".form-holder").animate({
+      height: '50px'}, "fast"
+    );
+      $('.form-holder').html(formHtml);
     });
   }); // end login click handler
 
@@ -20,11 +26,16 @@ $( document ).ready(function() {
     var $link = $(this);
     var ajaxRequest = $.ajax({
       url: $link.attr("href"),
-      type: 'get'
+      // type: 'get'
     });
 
     ajaxRequest.done(function (formHtml) {
-      console.log(formHtml);
+      // console.log(formHtml);
+      $link.hide();
+      $(".sign-in-btn").hide();
+      $(".form-holder").animate({
+      height: '200px'}, "fast"
+    );
       $('.form-holder').html(formHtml)
     });
   }); // end signup click handler
