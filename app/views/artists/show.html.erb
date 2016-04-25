@@ -1,20 +1,84 @@
+<div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Welcome <%=@artist.name%></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4"></div>
+      </div>
+    </div>
+    <div class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="span4"></div>
+          <div class="span4">
+            <img class="center-block img-rounded" src="https://ununsplash.imgix.net/photo-1421098518790-5a14be02b243?w=1024&q=50&fm=jpg&s=24665881d66f79925810c2deb7e486b9"
+            width="304" height="236">
+          </div>
+          <div class="span4"></div>
+        </div>
+        <div class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ol class="list-unstyled text-center">
+                  <li style="font-size:25px;">Hometown: <%= @artist.hometown %></li>
+                  <li style="font-size:25px;">Bio: <%= @artist.bio %></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<br><br><br><h1><%=@artist.name%></h1>
-<div id="new-song">
-  <h4>Drop song</h4>
-<p id="demo"></p>
-<%=render partial: '/shared/map'%>
-<button id="reset">Reset</button>
-<br><br>
-
-<%= render 'songs/new', locals: {song: @song} %>
-</div>
-<div id="artist-songs">
-  <h4>Active Songs</h4>
-  <ol>
-  <%@artist.songs.each do |song| %>
-  <li><%=song.name%></li>
-  <%end%>
-</ol>
-</div>
-
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="col-md-12">
+              <h1 class="text-center">Active Songs</h1>
+            </div>
+            <div class="col-md-12">
+              <% @artist.songs.each do |song| %>
+              <h1 class="list-group-item text-center" style="font-size:25px;"><%= link_to song.name, artist_song_path(@artist, song) %></h1>
+              <ol class="list-group list-unstyled text-center">
+                <li class="list-group-item" style="font-size:25px;">Location: <%= song.address_street %> - <%= song.address_location%>, <%= song.address_state %></li>
+                <li class="list-group-item" style="font-size:25px;">Expiration Date:
+                  <% if song.expire != nil %>
+                  <%= song.expire.strftime("%b %d, %Y at %I:%M%p") %>
+                  <% else %>
+                  "Music never really dies."
+                  <% end %>
+                </li>
+              </ol>
+              <%end%>
+            </div>
+          </div>
+            <div class="col-lg-6">
+              <div class="col-md-12">
+                <h1 class="text-center">Drop Song</h1>
+              </div>
+              <div class="col-md-12">
+                <p id="demo"></p>
+                <%=render partial: '/shared/map'%>
+                <button id="reset">Reset</button>
+                <br><br>
+                <%=render partial: '/shared/errors', locals: {errors: @errors} %>
+                <%=render '/shared/flash' %>
+                <%= render 'songs/new', locals: {song: @song} %>
+              </div>
+            </div>
+        </div>
+    </div>

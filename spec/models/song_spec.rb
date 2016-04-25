@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'spec_helper'
+
 RSpec.describe Song, type: :model do
 
   describe 'Model tests: ' do

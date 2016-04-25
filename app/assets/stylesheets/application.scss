@@ -58,3 +58,24 @@ width: 50%;
   float:right;
 
 }
+
+.errors{
+  list-style-type: none;
+  color: red;
+  margin-left: -40px;
+}
+.flash{
+  color: red;
+}
+
+ol.nav li a, ol.nav li a:visited {
+    color: #fff !important;
+}
+
+ol.nav li a:hover, ol.nav li a:active {
+    color: #fff !important;
+}
+
+ol.nav li.active a {
+    color: #fff !important;
+}
