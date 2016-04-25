@@ -1,13 +1,12 @@
 <div id="home-jumbo" class="jumbotron text-center">
   <div class="container">
     <h1 class="logo">Ear Shot</h1>
-    <%= link_to "Login", new_session_path %>
     <!-- <a class="btn btn-success btn-lg sign-up-landing-btn" href="/users/new">Sign up </a> -->
-    <%= link_to "Register", new_user_path %>
     <%=render '/shared/flash' %>
     <%=render '/shared/errors' %>
-
-      </ul>
+    <%= link_to "Sign In", new_session_path,  class: "sign-in-btn" %>
+    <%= link_to "Register", new_user_path,  class: "register-btn" %>
+    <section class="signin-register-form-wrapper"></section>
     <div class="form-holder center-block"></div>
   </div>
 </div>
