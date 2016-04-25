@@ -36,6 +36,10 @@ Location.create(song_id: 7, radius: 1000,  long: -88.6371722, lat: 41.8923459999
 Location.create(song_id: 8, radius: 800,  long: -87.4371722, lat: 42.234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 9, radius: 200,  long: -87.2371722, lat: 41.9234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 10, radius: 400,  long: -87.671722, lat: 41.889234599999995)
+Location.create(song_id: 11, radius: 1000,  long: -87.6374870, lat: 41.8896940)
+
+
+
 
 
 20.times do
