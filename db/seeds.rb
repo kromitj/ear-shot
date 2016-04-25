@@ -19,7 +19,7 @@ Artist.create(name: "The boy yaboi", user_id: 2, hometown: "Chicago", bio: "In w
   Song.create(name: Faker::Hipster.word, attachment: "http://creaumond.ourea.feralhosting.com/Run%20The%20Jewels%20-%20Banana%20Clipper.mp3", artist_id: 1, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 
-5.times do
+4.times do
   Song.create(name: Faker::Hacker.noun, attachment: "http://creaumond.ourea.feralhosting.com/Run%20The%20Jewels%20-%20Banana%20Clipper.mp3", artist_id: 2, artwork: Faker::Placeholdit.image("50x50", 'jpg'))
 end
 

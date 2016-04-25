@@ -19,8 +19,9 @@
     <!--<%= song.locations.first.radius %><br>-->
 
     Location:
-      <%= song.address_location %>, <%= song.address_city %><br>
-
+    <% if song.address != nil %>
+      <%= song.address_location %>, <%= song.address_state %><br>
+      <% end %><br>
     Expiration Date:
       <% if song.expire != nil %>
         <%= song.expire.strftime("%b %d, %Y at %I:%M%p") %>
