@@ -54,11 +54,6 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.4)
-    carrierwave (0.11.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -120,7 +115,7 @@ GEM
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
     net-http-pipeline (1.0.1)
@@ -246,7 +241,6 @@ DEPENDENCIES
   bcrypt
   bootstrap-sass (~> 3.3.6)
   byebug
-  carrierwave
   coffee-rails (~> 4.1.0)
   dotenv-rails
   faker

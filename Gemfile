@@ -2,11 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails', :groups => [:development, :test], :require => 'dotenv/rails-now'
 # gem 'fog-aws'
 gem 'aws-sdk', "~> 1.0"
 gem "paperclip"
-gem "carrierwave"
 gem 'rack-cors', :require => 'rack/cors'
 
 
@@ -14,6 +13,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 
 gem 'rails', '4.2.6'
+
 gem 'responders'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
