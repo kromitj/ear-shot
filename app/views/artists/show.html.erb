@@ -47,15 +47,18 @@
 
     <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-5 col-lg-offset-1">
             <div class="col-md-12">
               <h1 class="text-center">Active Songs</h1>
             </div>
             <div class="col-md-12">
               <% @artist.songs.each do |song| %>
+
               <h1 class="list-group-item text-center" style="font-size:25px;"><%= link_to song.name, artist_song_path(@artist, song) %></h1>
               <ol class="list-group list-unstyled text-center">
+                <% if song.address != nil %>
                 <li class="list-group-item" style="font-size:25px;">Location: <%= song.address_street %> - <%= song.address_location%>, <%= song.address_state %></li>
+                <% end %><br>
                 <li class="list-group-item" style="font-size:25px;">Expiration Date:
                   <% if song.expire != nil %>
                   <%= song.expire.strftime("%b %d, %Y at %I:%M%p") %>
@@ -67,7 +70,7 @@
               <%end%>
             </div>
           </div>
-            <div class="col-lg-6">
+            <div class="col-lg-5">
               <div class="col-md-12">
                 <h1 class="text-center">Drop Song</h1>
               </div>
