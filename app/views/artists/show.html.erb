@@ -15,11 +15,11 @@
   <ol>
   <% @artist.songs.each do |song| %>
   <li>
-    Title: <%= link_to song.name, artist_song_path(@artist, song) %><br>
+    Title: <%= link_to song.name, artist_song_path(@artist, song), class: "song-link", id: "song-#{song.id}" %><br>
 
     Location:
     <% if song.address != nil %>
-      <%= song.address_location %>, <%= song.address_state %><br>
+
       <% end %><br>
     Expiration Date:
       <% if song.expire != nil %>
@@ -35,4 +35,7 @@
 </ol>
 
 </div>
+
+<div class="test"></div>
+
 
