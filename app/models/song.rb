@@ -20,15 +20,15 @@ class Song < ActiveRecord::Base
   end
 
   def address
-    Geocoder.search(self.song_location).first.address_components
+    Geocoder.search(self.song_location).first
   end
 
   def address_location
-    self.address[2]["long_name"]
+    self.address_components.address[2]["long_name"]
   end
 
   def address_city
-    self.address[3]["short_name"]
+    self.address_components.address[3]["short_name"]
   end
 
   def expire
