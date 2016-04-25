@@ -28,19 +28,19 @@ Location.create(song_id: 2, radius: 500, long: -87.6371722, lat:  41.88923459999
 Location.create(song_id: 3, radius: 200, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 4, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 5, radius: 800, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
-Location.create(song_id: 6, radius: 200, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 7, radius: 1000, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 8, radius: 800, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 9, radius: 200, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
-Location.create(song_id: 10, radius: 400, long: Faker::Address.longitude, lat: Faker::Address.latitude, expiration: Faker::Date.forward(7))
+Location.create(song_id: 6, radius: 200, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 7, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 8, radius: 800, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 9, radius: 200, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 10, radius: 400, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 
 
 20.times do
-  Listen.create(user_id: 2, song_id: (1..5).to_a.sample, long: Faker::Address.longitude, lat: Faker::Address.latitude)
+  Listen.create(user_id: 2, song_id: (1..5).to_a.sample, long: -87.6371722, lat: 41.889234599999995)
 end
 
 20.times do
-  Listen.create(user_id: 1, song_id: (6..10).to_a.sample, long: Faker::Address.longitude, lat: Faker::Address.latitude)
+  Listen.create(user_id: 1, song_id: (6..10).to_a.sample, long: -87.6371722, lat: 41.889234599999995)
 end
 
 5. times do
