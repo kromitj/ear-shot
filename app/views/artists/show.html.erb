@@ -6,7 +6,8 @@
 <%=render partial: '/shared/map'%>
 <button id="reset">Reset</button>
 <br><br>
-
+<%=render partial: '/shared/errors', locals: {errors: @errors} %>
+<%=render '/shared/flash' %>
 <%= render 'songs/new', locals: {song: @song} %>
 </div>
 <div id="artist-songs">

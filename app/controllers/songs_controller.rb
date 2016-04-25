@@ -16,8 +16,8 @@ class SongsController < ApplicationController
     if @song.save && @location.save
       redirect_to @artist
     else
-      @location_errors = @location.errors.full_messages
-      redirect_to @artist
+      @errors = ["Make sure you've selected a location","Make sure you've entered a name","Make sure you're file is an mp3"]
+      render "/artists/show"
     end
   end
 # "location"=>{"expiration"=>"2016-04-30T00:00", "long"=>"-87.635238468647", "lat"=>"41.894994021302146", "radius"=>"1000"}},
