@@ -23,4 +23,12 @@ class Song < ActiveRecord::Base
   def address_street
     Geocoder.search([self.location[0].to_s, self.location[1].to_s]).first.address_components[1]["short_name"]
   end
+
+    def address_state
+    Geocoder.search([self.location[0].to_s, self.location[1].to_s]).first.address_components[3]["short_name"]
+  end
+
+  def expire
+    self.locations.first.expiration ||= nil
+  end
 end
