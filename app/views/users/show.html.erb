@@ -1,8 +1,10 @@
 
 
 <br><br><br><br>
-<h1>Welcome <%=@user.username%></h1>
+
+<%= render 'user_info', locals: { user: @user} %>
 <%= render 'user_artists', locals: { user: @user} %>
+<section class="edit-wrapper"></section>
 <!-- list user's personal artists, provide links to artist pages -->
 <!-- become an artist link, supply artist info -->
 <!-- upload song NEED MAPS API -->
