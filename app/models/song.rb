@@ -20,7 +20,7 @@ class Song < ActiveRecord::Base
   end
 
   def address
-    Geocoder.search(self.song_location).first.address_components
+    @address =|| Geocoder.search(self.song_location).first.address_components
   end
 
   def address_location
