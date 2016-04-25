@@ -4,7 +4,6 @@ class SessionController < ApplicationController
   def new
     @user = User.new
     if request.xhr?
-      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
       puts "in xhr for session new"
       render 'session/_new', layout: false
     else
@@ -24,7 +23,6 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     session.clear
     redirect_to root_path
   end
