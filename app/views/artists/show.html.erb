@@ -16,7 +16,6 @@
   <% @artist.songs.each do |song| %>
   <li>
     Title: <%= link_to song.name, artist_song_path(@artist, song) %><br>
-    <!--<%= song.locations.first.radius %><br>-->
 
     Location:
     <% if song.address != nil %>
