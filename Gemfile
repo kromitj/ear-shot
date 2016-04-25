@@ -7,6 +7,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'aws-sdk', "~> 1.0"
 gem "paperclip"
 gem "carrierwave"
+gem 'rack-cors', :require => 'rack/cors'
+
 
 # gem 'carrierwave'
 
@@ -28,6 +30,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'rspec'
 gem "rspec-rails"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

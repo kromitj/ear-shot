@@ -7,5 +7,13 @@ class Song < ActiveRecord::Base
   has_many :favorites
   has_many :comments
   mount_uploader :attachment, AttachmentUploader
+  accepts_nested_attributes_for :locations
+
+  validates :name, presence: true
+  # validates :attachment, uniqueness: true
+
+  def location
+    [self.locations.first.lat, self.locations.first.long]
+  end
 end
 

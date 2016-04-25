@@ -8,16 +8,17 @@ class SongsController < ApplicationController
 
   def create
     @artist = Artist.find(params[:artist_id])
-    @song = @artist.songs.new(song_params)
-    p "$$$$$$$$$$$$$$$$$$$$$$$"
-    p params
-    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-
+    @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment])
+    p params[:song][:location]
+    @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
     # @location = @song.locations.new(params)
-    if @song.save
+    if @song.save && @location.save
       redirect_to @artist
+    else
+
     end
   end
+# "location"=>{"expiration"=>"2016-04-30T00:00", "long"=>"-87.635238468647", "lat"=>"41.894994021302146", "radius"=>"1000"}},
 
   # def create
   #   @file_data = params[:song][:file]
@@ -42,7 +43,7 @@ class SongsController < ApplicationController
 
   private
     def song_params
-      params.require(:song).permit(:name, :artist_id, :attachment)
+      params.require(:song).permit(:name, :artist_id, :attachment, :location => [:expiration, :lat, :long, :radius])
     end
 
 end
