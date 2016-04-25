@@ -3,15 +3,13 @@ class SessionController < ApplicationController
   skip_before_action :redirect_visitors, only: [ :create, :new]
   def new
     @user = User.new
-    render 'new'
-    # if request.xhr?
-    #   render 'session/_new', layout: false
-    # else
-    #   respond_to do |format|
-    #     format.html { render 'session/new' }
-    #     format.json { render :json => @user}
-    #   end
-    # end
+    if request.xhr?
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts "in xhr for session new"
+      render 'session/_new', layout: false
+    else
+      render 'new'
+    end
   end
 
   def create

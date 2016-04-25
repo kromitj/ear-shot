@@ -1,15 +1,10 @@
-<!-- Needs to fixed -->
+<%= form_for :session, url: session_index_path  do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br>
 
-<section class="new-session-form-wrapper">
-  <%= form_for :session, url: login_path, html: {id: "login-form"} do |f| %>
-    <div class="form-group">
-        <%= f.label :username, class: "landing-form-label" %><br>
-        <%= f.text_field :username, class: "form-control", :placeholder => "mrRyanTSmith", :style => "text-align: Center" %>
-        <%= f.label :password, class: "landing-form-label" %><br>
-        <%= f.password_field :password, class: "form-control", :placeholder => "********", :style => "text-align: Center" %>
-    </div>
-    <div class="form-group">
-        <%= f.submit "Login", class: "btn btn-success center-block" %>
-    </div>
-  <% end %>
-</section>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+  <%= f.submit "Login" %>
+<% end %>
+
