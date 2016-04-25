@@ -6,7 +6,6 @@ gem 'dotenv-rails', :groups => [:development, :test], :require => 'dotenv/rails-
 # gem 'fog-aws'
 gem 'aws-sdk', "~> 1.0"
 gem "paperclip"
-gem "carrierwave"
 gem 'rack-cors', :require => 'rack/cors'
 
 

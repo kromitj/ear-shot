@@ -5,7 +5,7 @@ class CreateLocations < ActiveRecord::Migration
       t.float :lat
       t.float :radius
       t.integer :song_id
-      t.datetime :expiration, default: nil
+      t.datetime :expiration, :default => Time.now + 30.days
 
       t.timestamps null: false
 
