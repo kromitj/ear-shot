@@ -16,7 +16,7 @@ class RequestsController < ApplicationController
       array = []
       array.push(song.locations.first.lat)
       array.push(song.locations.first.long)
-      if distance_between(@user_loc, array) < song.locations.first.radius  
+      if distance_between(@user_loc, array) < song.locations.first.radius
         return_array.push(song)
       else
         p false
@@ -45,7 +45,7 @@ class RequestsController < ApplicationController
 private
 
   def distance_between(point_one, point_two)
-    Geocoder::Calculations.distance_between(point_one, point_two)
+    Geocoder::Calculations.distance_between(point_one, point_two)*1000
   end
 
 
