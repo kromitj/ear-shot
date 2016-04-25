@@ -1,10 +1,24 @@
 <%= form_for :song, url: artist_songs_path(@artist) do |f| %>
+
+  <% if @location_errors %>
+  <ul>
+    <% @location_errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+
   <div class="field">
     <%= f.label "Song Name" %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :attachment %>
+    <%= f.label "Artwork" %>
+    <%= f.file_field :artwork %>
+  </div>
+  <div class="field">
+    <%= f.label "Song File" %>
     <%= f.file_field :attachment%>
   </div>
   <%=f.fields_for :location do |location|%>

@@ -3,12 +3,13 @@ class SongsController < ApplicationController
   skip_before_action :redirect_visitors
 
   def new
+    @artist = Artist.find(params[:artist_id])
     @song = Song.new
   end
 
   def create
     @artist = Artist.find(params[:artist_id])
-    @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment])
+    @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment], artwork: params[:song][:artwork])
     p params[:song][:location]
     @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
     # @location = @song.locations.new(params)
@@ -34,17 +35,23 @@ class SongsController < ApplicationController
   #   end
   # end
 
+  def show
+    @song = Song.find(params[:id])
+  end
+
   def update
     @song = Song.find(params[:id])
   end
 
   def destroy
     @song = Song.find(params[:id])
+    @song.destroy
+    redirect_to @song.artist
   end
 
   private
     def song_params
-      params.require(:song).permit(:name, :artist_id, :attachment, :location => [:expiration, :lat, :long, :radius])
+      params.require(:song).permit(:name, :artist_id, :attachment, :artwork, :location => [:expiration, :lat, :long, :radius])
     end
 
 end
