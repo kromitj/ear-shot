@@ -1,12 +1,9 @@
-<% if target.errors.any %>
-<div class="error_explanation">
-  <h2><%=pluralize(target.errors.count, "error") %> prevented this error from being saved:</h2>
+<div id="errors">
+  <%if @errors%>
   <ul>
-    <% target.errors.full_messages.each do |msg| %>
-    <li><%=msg%></li>
+    <% @errors.each do |error| %>
+      <li class="errors"><%=error%></li>
     <%end%>
   </ul>
+  <%end%>
 </div>
-<%end%>
-
-<!-- render "shared/_errors", :target => @user -->

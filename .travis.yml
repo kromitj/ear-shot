@@ -9,6 +9,12 @@ before_script:
   - bundle exec rake db:create RAILS_ENV=test
   - bundle exec rake db:migrate
   - bundle exec rake db:test:prepare
+  - rake db:seed RAILS_ENV=test --trace
 bundler_args: --binstubs=./bundler_stubs
 
 sudo: required
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: SECRET_API_KEY

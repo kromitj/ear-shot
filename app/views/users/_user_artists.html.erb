@@ -1,6 +1,24 @@
-<h2>My Artists</h2>
-<ul class="user-artists-list">
-  <% @user.artists.each do |artist|%>
-  <li class="user-artist-item"><%= link_to artist.name, artist_path %></li>
-  <% end %>
-</ul>
+<div class="user-artist-module col-sm-12 col-md-4">
+  <div class="row">
+    <div class="col-sm-6">
+
+    </div>
+    <div class="col-sm-6 ">
+
+    </div>
+  </div>
+  <table class="table">
+    <tr>
+      <th><h2 class="text-center">My Artists</h2></th>
+      <th><button type="button" class="btn btn-success add-artist-btn">
+        <%= link_to "+ Artist", new_artist_path, class: "nav-link " %>
+      </button></th>
+    </tr>
+    <tr>
+      <th>Artist</th>
+    </tr>
+    <% @user.artists.each do |artist|%>
+    <tr><td><%= link_to artist.name, artist_path %></td></tr>
+    <% end %>
+  </table>
+</div>

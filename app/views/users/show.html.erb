@@ -2,7 +2,7 @@
 
 <br><br><br><br>
 <h1>Welcome <%=@user.username%></h1>
-<%= render 'user_artists' %>
+<%= render 'user_artists', locals: { user: @user} %>
 <!-- list user's personal artists, provide links to artist pages -->
 <!-- become an artist link, supply artist info -->
 <!-- upload song NEED MAPS API -->

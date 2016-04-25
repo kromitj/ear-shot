@@ -4,15 +4,21 @@
   <title>Earshot</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMxrwns8Hvjk3ax8QTAYxei7Ilpen3AM&libraries=drawing&callback=initMap" async defer></script>
+
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body >
+  <div class="container-fluid">
+    <!-- <div class="row header"> -->
+ <% if logged_in? %>
+        <%= render "layouts/navbar"%>
+      <% end %>
+    </div>
 
-  <% unless request.env['PATH_INFO'] == '/' %>
-    <%= render "/layouts/navbar"%>
-  <% end %>
-
-  <%= yield %>
-
+    <div class="main-wrapper center-block">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

@@ -15,8 +15,55 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 
+#map-container{
+  height: 400px;
+  border-radius: 16px 16px;
+  border-color: #fff;
+  border-style: solid;
+  box-shadow: 2px 2px 10px #B1B1B1;
+  border-width: 7px;
+  width: 100%;
+}
+
+#map{
+  height: 384px;
+  width: 100%;
+}
+
+.main-wrapper {
+  width: 66%;
+}
+
+.add-artist-btn {
+  margin-left: 50px;
+}
 
 
+.user-artist-module {
+  border: 1px solid black;
+}
 
+#new-song{
+width: 50%;
+  float:left;
+}
+#artist-songs{
+  float:right;
+
+}
+
+.errors{
+  list-style-type: none;
+  color: red;
+  margin-left: -40px;
+}
+.flash{
+  color: red;
+}
