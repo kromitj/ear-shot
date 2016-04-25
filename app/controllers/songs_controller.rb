@@ -8,10 +8,13 @@ class SongsController < ApplicationController
   end
 
   def create
+    p "$$$$$$$$$$$$$$$$$$$$$"
+    p params
+    p "$$$$$$$$$$$$$$$$$$$$$"
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment], artwork: params[:song][:artwork])
-    obj = remote_upload(@song)
-    puts obj
+    file_data = params[:song][:attachment]
+    obj = S3_BUCKET.objects.create("#{@artist.name}: #{params[:song][:name]}", file_data.tempfile)
     @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
     if @song.save && @location.save
       redirect_to @artist
