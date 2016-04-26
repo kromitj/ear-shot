@@ -48,42 +48,52 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-5 col-lg-offset-1">
-        <div class="col-md-12">
-          <h1 class="text-center">Active Songs</h1>
-        </div>
-        <div class="col-md-12">
 
-          <% @artist.songs.each do |song| %>
-          <h1 class="list-group-item text-center" style="font-size:25px;"><%= link_to song.name, artist_song_path(@artist, song) %></h1>
-          <ol class="list-group list-unstyled text-center">
-            <li class="list-group-item" style="font-size:25px;">Location: <%= song.neighborhood %> - <%= song.city%></li>
-            <br>
-            <li class="list-group-item" style="font-size:25px;">Expiration Date:
-              <% if song.expire != nil %>
-              <%= song.expire.strftime("%b %d, %Y at %I:%M%p") %>
-              <% else %>
-              "Music never really dies."
-              <% end %>
-            </li>
-          </ol>
-          <% end %>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-5 col-lg-offset-1">
+      <div class="col-md-12">
+        <h1 class="text-center">Active Songs</h1>
       </div>
-        <div class="col-lg-5">
-          <div class="col-md-12">
-            <h1 class="text-center">Drop Song</h1>
-          </div>
-          <div class="col-md-12">
-            <p id="demo"></p>
-            <%=render partial: '/shared/map'%>
-            <button id="reset">Reset</button>
-            <br><br>
-            <%= render partial: '/shared/errors', locals: {errors: @errors} %>
-            <%= render '/shared/flash' %>
-            <%= render 'songs/new', locals: {song: @song} %>
-          </div>
-        </div>
+      <div class="col-md-12">
+
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>Song Title</th>
+              <th>Listens</th>
+              <th>Likes</th>
+              <th>Expiration Date</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @artist.songs.each do |song| %>
+            <tr>
+              <td><%= link_to song.name, artist_song_path(@artist, song) %></td>
+              <td><%= song.listens.count%></td>
+              <td><%= song.favorites.count%></td>
+              <td><%= song.expire.strftime("%b %d, %Y at %I:%M%p") %></td>
+              <td><%= song.neighborhood %> <%= song.city %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <div class="col-lg-5">
+      <div class="col-md-12">
+        <h1 class="text-center">Drop Song</h1>
+      </div>
+      <div class="col-md-12">
+        <p id="demo"></p>
+        <%=render partial: '/shared/map'%>
+        <button id="reset">Reset</button>
+        <br><br>
+        <%= render partial: '/shared/errors', locals: {errors: @errors} %>
+        <%= render '/shared/flash' %>
+        <%= render 'songs/new', locals: {song: @song} %>
+      </div>
+    </div>
+  </div>
 </div>
