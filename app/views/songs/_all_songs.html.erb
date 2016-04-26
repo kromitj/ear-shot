@@ -1,4 +1,5 @@
 <ul class="list-group">
+  <!-- filter this to be songs based on current location -->
   <% @songs.each do |song| %>
     <li class="list-group-item">
       <div>
@@ -9,7 +10,6 @@
             <audio id="song<%= song.id %>" class="media-songs" src="<%= song.attachment %>"></audio>
               <div>
               <button  class="media-play-btn" song="<%= song.id%>">play</button>
-              <button onclick='document.getElementById("player<%= song.id %>").stop()'>Stop</button>
             </div>
           </div>
           <div class="col-sm-3">
