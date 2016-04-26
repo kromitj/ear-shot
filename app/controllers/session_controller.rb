@@ -22,10 +22,15 @@ class SessionController < ApplicationController
     end
   end
 
-  def destroy
-    session.clear
+  def logout
+    log_out
     redirect_to root_path
   end
+  #
+  # def destroy
+  #   session.delete
+  #   redirect_to root_path
+  # end
 
 private
 

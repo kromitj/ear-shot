@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :session, except: [:destroy]
   resources :comments
   # resources :session, only: [:new, :create,]
-  delete '/session/logout' => 'session#destroy'
+  get '/logout' => 'session#logout'
 
 
   resources :requests
