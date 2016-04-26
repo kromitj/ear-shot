@@ -48,7 +48,13 @@ Song.create(name:"Miss Tinkle's Overture", attachment: "http://ear-shot-mp3.s3.a
 Song.create(name:"Daft Punk Is Playing in my House", attachment: "http://ear-shot-mp3.s3.amazonaws.com/LCD Soundsystem - Daft Punk Is Playing at My House.mp3", artist_id: 3, artwork:"http://ear-shot-mp3.s3.amazonaws.com/lcd.jpg" )
 
 
-Location.create(song_id: 1, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 10, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 11, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 12, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 13, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 14, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+Location.create(song_id: 15, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
+
 Location.create(song_id: 2, radius: 500, long: -87.6371722, lat:  41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 3, radius: 200, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 4, radius: 1000, long: -87.6371722, lat: 41.889234599999995, expiration: Faker::Date.forward(7))
@@ -58,8 +64,8 @@ Location.create(song_id: 6, radius: 200,  long: -87.6371722, lat: 41.92345999999
 Location.create(song_id: 7, radius: 1000,  long: -88.6371722, lat: 41.89234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 8, radius: 800,  long: -87.4371722, lat: 42.234599999995, expiration: Faker::Date.forward(7))
 Location.create(song_id: 9, radius: 200,  long: -87.2371722, lat: 41.9234599999995, expiration: Faker::Date.forward(7))
-Location.create(song_id: 10, radius: 400,  long: -87.671722, lat: 41.889234599999995)
-Location.create(song_id: 11, radius: 1000,  long: -87.6374870, lat: 41.8896940)
+# Location.create(song_id: 10, radius: 400,  long: -87.671722, lat: 41.889234599999995)
+# Location.create(song_id: 11, radius: 1000,  long: -87.6374870, lat: 41.8896940)
 
 
 
