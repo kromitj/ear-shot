@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20160421204124) do
     t.float    "lat"
     t.float    "radius"
     t.integer  "song_id"
-    t.datetime "expiration",   default: '2016-05-26 14:49:13'
+    t.datetime "expiration",   default: '2016-05-26 20:29:37'
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
