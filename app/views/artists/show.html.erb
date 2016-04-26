@@ -73,7 +73,9 @@
               <td><%= link_to song.name, artist_song_path(@artist, song) %></td>
               <td><%= song.listens.count%></td>
               <td><%= song.favorites.count%></td>
+              <% if song.expire != nil %>
               <td><%= song.expire.strftime("%b %d, %Y at %I:%M%p") %></td>
+              <%end%>
               <td><%= song.neighborhood %> <%= song.city %></td>
             </tr>
             <% end %>
