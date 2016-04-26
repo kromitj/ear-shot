@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  MAX_RADIUS=1000 #meters
+  MAX_RADIUS=5000 #meters
   belongs_to :song
 
 
