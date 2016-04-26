@@ -25,7 +25,9 @@ html,body{
   background-color: none;
 }
 
-
+.media-left {
+  width: 25%;
+}
 #map-container{
   height: 400px;
   border-radius: 16px 16px;
@@ -41,6 +43,10 @@ html,body{
   width: 100%;
 }
 
+#media-player {
+  width: 400px;
+}
+
 .main-wrapper {
   width: 66%;
 }
@@ -48,6 +54,7 @@ html,body{
 .add-artist-btn {
   margin-left: 50px;
 }
+
 
 
 .user-artist-module {
@@ -69,6 +76,7 @@ width: 50%;
   color: red;
   margin-left: -40px;
 }
+
 
 .flash{
   color: red;
