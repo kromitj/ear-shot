@@ -21,5 +21,4 @@ deploy:
     - "rake db:migrate"
     - "rake db:seed"
   on:
-    all_branches: true
-
+    branch: master

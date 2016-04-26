@@ -29,6 +29,11 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    if request.xhr?
+      render '_show', layout: false, locals: {song: @song}
+    else
+      render 'show'
+    end
   end
 
   def update
