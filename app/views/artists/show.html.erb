@@ -15,6 +15,7 @@
   <ol>
   <% @artist.songs.each do |song| %>
   <li>
+
     Title: <%= link_to song.name, artist_song_path(@artist, song) %><br>
 
     Location:
@@ -29,7 +30,7 @@
       <% end %>
 
     <br><br>
-
+    <%=render partial: '/shared/audio', locals: {song: song}%>
   </li>
   <% end %>
 </ol>
