@@ -90,7 +90,7 @@ var x = document.getElementById("demo");
       zIndex: 1
     }
   });
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input)
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(input)
 
   drawingManager.setMap(map);
   var all_overlays = [];
