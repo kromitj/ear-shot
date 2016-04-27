@@ -372,5 +372,17 @@ $("#reset").on("click",function(){
   }
   all_overlays = [];
 });
+
+  function createMap(position) {
+    map = new google.maps.Map(document.getElementById('user-map'), {
+      center: {lat: position.coords.latitude, lng: position.coords.longitude},
+      zoom: 13
+    });
 }
 }
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
