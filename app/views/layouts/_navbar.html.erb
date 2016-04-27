@@ -1,5 +1,5 @@
 <div class="navbar navbar-default navbar-inverse navbar-static-top">
-    <%=render partial: '/layouts/media_player' %>
+    <%=render partial: '/layouts/media_player' if request.env['PATH_INFO'].include?("artist") %>
 
     <div class="container">
       <div class="navbar-header">
@@ -13,7 +13,7 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-ex-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item" style="font-size:20px;"><%= link_to "Profile", user_path, class: "nav-link"%></li>
+          <li class="nav-item" style="font-size:20px;"><%= render 'layouts/dynamic_nav_link'%></li>
           <li class="nav-item" style="font-size:20px;"><%= link_to "Logout", session_logout_path, method: "delete", class: "nav-link"%></li>
         </ul>
       </div>
