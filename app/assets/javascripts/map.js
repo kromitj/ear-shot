@@ -146,6 +146,3 @@ $("#reset").on("click",function(){
     });
   }
 }
-
-
-
