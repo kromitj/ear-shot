@@ -1,0 +1,70 @@
+
+
+#audioplayer{
+  display: inline-block;
+  margin: 100px;
+}
+#timeline{
+  width: 400px;
+  height: 20px;
+  background: #000000;
+  margin-top: 20px;
+  float: left;
+  border-radius: 15px;
+}
+
+#volumeline{
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  background: #000000;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+#volumehead{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-top: 1px;
+  background: #ffffff;
+}
+#playhead{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-top: 1px;
+  background: #ffffff;
+}
+
+#mutebutton{
+  height:60px;
+  width: 60px;
+  border: none;
+  background-size: 50% 50%;
+  background-position: center;
+}
+#pButton{
+  height:60px;
+  width: 60px;
+  border: none;
+  float: left;
+  background-size: 50% 50%;
+  background-position: center;
+}
+
+.play{background: image-url('play.jpg') no-repeat;}
+
+.sound{
+background: url('sound.jpg') no-repeat;
+height: 35px;
+width: 35px;
+background-size: cover;
+border: none;
+margin-top: 10px;
+margin-left: 10px;
+
+}
+
+.pause{background: image-url('pause.jpg') no-repeat;}
+.mute{background: image-url('mute.jpg') no-repeat;}
+
