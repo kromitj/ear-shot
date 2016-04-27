@@ -51,13 +51,15 @@ ActiveRecord::Schema.define(version: 20160421204124) do
   end
 
   create_table "locations", force: :cascade do |t|
+    t.string   "city"
+    t.string   "neighborhood"
     t.float    "long"
     t.float    "lat"
     t.float    "radius"
     t.integer  "song_id"
-    t.datetime "expiration", default: '2016-05-25 19:10:40'
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "expiration",   default: '2016-05-27 00:15:27'
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "songs", force: :cascade do |t|

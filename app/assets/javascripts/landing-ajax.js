@@ -11,8 +11,6 @@ $( document ).ready(function() {
 
     ajaxRequest.done(function (formHtml) {
       // console.log(formHtml);
-      $link.hide();
-      $(".register-btn").hide();
       $(".form-holder").animate({
       height: '50px'}, "fast"
     );
@@ -31,8 +29,6 @@ $( document ).ready(function() {
 
     ajaxRequest.done(function (formHtml) {
       // console.log(formHtml);
-      $link.hide();
-      $(".sign-in-btn").hide();
       $(".form-holder").animate({
       height: '200px'}, "fast"
     );
