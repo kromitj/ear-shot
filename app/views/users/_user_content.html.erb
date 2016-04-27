@@ -1,0 +1,37 @@
+ <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Favorite Songs</h1>
+          </div>
+
+          <div class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <% @user.favorites.each do |fav| %>
+                  <ol class="list-unstyled text-center text-muted">
+                    <li style="font-size:20px;"><%= fav.song.name %></li>
+                    <li style="font-size:20px;">Dropped by: <%= fav.song.artist.name%></li>
+                  </ol>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <% if @user.artists.count > 0 %>
+                  <h1 class="text-center"><%= link_to "Manage Artist Profile", artist_path, class: "nav-link " %></h1>
+                  <%else%>
+                  <h1 class="text-center"><%= link_to "Create Artist Profile", new_artist_path%></h1>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
