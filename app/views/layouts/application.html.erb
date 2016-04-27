@@ -2,19 +2,19 @@
 <html>
 <head>
   <title>Earshot</title>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" type="text/css" href="~/earshot/ear-shot/app/assets/stylesheets/style.css">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'audio_player', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMxrwns8Hvjk3ax8QTAYxei7Ilpen3AM&libraries=drawing&callback=initMap" async defer></script>
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
     rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
     rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
+
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>

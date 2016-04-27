@@ -56,7 +56,6 @@
               <h1 class="list-group-item text-center" style="font-size:25px;"><%= link_to song.name, artist_song_path(@artist, song) %></h1>
               <ol class="list-group list-unstyled text-center">
                 <% if song.address != nil %>
-                <li class="list-group-item" style="font-size:25px;">Location: <%= song.address_street %> - <%= song.address_location%>, <%= song.address_state %></li>
                 <% end %><br>
                 <li class="list-group-item" style="font-size:25px;">Expiration Date:
                   <% if song.expire != nil %>
@@ -85,3 +84,9 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
