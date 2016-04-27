@@ -24,9 +24,10 @@
   </div>
 </div>
 
-<section class="module parallax parallax-1">
-<div class="section">
+
+<div class="section section-primary">
   <div class="container">
+
     <div class="row">
       <div class="span4"></div>
       <div class="span4">
@@ -40,8 +41,8 @@
         <div class="row">
           <div class="col-md-12">
             <ol class="list-unstyled text-center">
-              <li class="bg-primary" style="font-size:25px;">Hometown: <%= @artist.hometown %></li>
-              <li class="bg-primary" style="font-size:25px;">Bio: <%= @artist.bio %></li>
+              <li style="font-size:25px;">Hometown: <%= @artist.hometown %></li>
+              <li style="font-size:25px;">Bio: <%= @artist.bio %></li>
             </ol>
           </div>
         </div>
@@ -49,13 +50,12 @@
     </div>
   </div>
   </div>
-  <section>
 </div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-5 col-lg-offset-1">
       <div class="col-md-12">
-        <h2 class="text-center">Active Songs</h2>
+        <h1 class="text-center">Active Songs</h1>
       </div>
       <div class="col-md-12">
 
@@ -87,7 +87,7 @@
     </div>
     <div class="col-lg-5">
       <div class="col-md-12">
-        <h2 class="text-center">Drop Song</h2>
+        <h1 class="text-center">Drop Song</h1>
       </div>
       <div class="col-md-12">
         <p id="demo"></p>
@@ -101,3 +101,13 @@
     </div>
   </div>
 </div>
+<h3>Song Activity</h3>
+<div id="message"></div>
+<div id="heatmap-container">
+  <div><%@artist.songs.each do |song|%>
+    <button class="heatmap-button" id="<%=song.id%>"><%=song.name%></button>
+    <%end%>
+    <button id="all">ALL</button>
+  </div>
+  <div id="heatmap"></div></div>
+
