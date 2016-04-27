@@ -67,10 +67,6 @@ Location.create(song_id: 8, radius: 800,  long: -87.4371722, lat: 42.23459999999
 Location.create(song_id: 9, radius: 200,  long: -87.2371722, lat: 41.9234599999995, expiration: Faker::Date.forward(7))
 # Location.create(song_id: 10, radius: 400,  long: -87.671722, lat: 41.889234599999995)
 # Location.create(song_id: 11, radius: 1000,  long: -87.6374870, lat: 41.8896940)
-
-
-
-end
 Listen.create(user_id: 2, song_id: 1,  long: -87.371722, lat: 41.889234599999995)
 
 20.times do
