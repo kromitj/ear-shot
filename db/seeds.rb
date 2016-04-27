@@ -70,7 +70,8 @@ Location.create(song_id: 9, radius: 200,  long: -87.2371722, lat: 41.92345999999
 
 
 
-
+end
+Listen.create(user_id: 2, song_id: 1,  long: -87.371722, lat: 41.889234599999995)
 
 20.times do
   Listen.create(user_id: 2, song_id: (1..5).to_a.sample,  long: -87.371722, lat: 41.889234599999995)
