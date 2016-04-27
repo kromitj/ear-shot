@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/songs/drop_song' => 'songs#drop_song'
 
   resources :requests
+
+  get '/near/requests' => 'requests#near'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
