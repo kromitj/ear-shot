@@ -1,5 +1,6 @@
 // $(document).ready(function(){
 var map;
+var songsMap;
 var circle;
 
 function initMap(){
@@ -20,9 +21,83 @@ var x = document.getElementById("demo");
       zoom: 13
     });
 
+
+
+var ajaxRequest = $.ajax({
+  type: "GET",
+  url: window.location.pathname
+});
+
+ajaxRequest.done(function(response){
+  var listenData = [];
+  var songsArray = response;
+  for(var i=0; i < songsArray.length; i++){
+    var songListens = songsArray[i];
+    for(var j=0; j < songListens.length; j++){
+        listenData.push(songListens[j]);
+    }
+  }
+   // create new map for heatmap
+  songsMap = new google.maps.Map(document.getElementById('heatmap'), {
+      zoom: 15,
+      center: {lat: listenData[i].lat, lng: listenData[i].long},
+      mapTypeId: google.maps.MapTypeId.SATELLITE
+    });
+
+    // create heatmap overaly, relies on getPoints() method
+    heatmap = new google.maps.visualization.HeatmapLayer({
+    data: getPoints(),
+    map: songsMap
+  });
+  function toggleHeatmap() {
+    heatmap.setMap(heatmap.getMap() ? null : songsMap);
+  }
+
+  function changeGradient() {
+  var gradient = [
+    'rgba(0, 255, 255, 0)',
+    'rgba(0, 255, 255, 1)',
+    'rgba(0, 191, 255, 1)',
+    'rgba(0, 127, 255, 1)',
+    'rgba(0, 63, 255, 1)',
+    'rgba(0, 0, 255, 1)',
+    'rgba(0, 0, 223, 1)',
+    'rgba(0, 0, 191, 1)',
+    'rgba(0, 0, 159, 1)',
+    'rgba(0, 0, 127, 1)',
+    'rgba(63, 0, 91, 1)',
+    'rgba(127, 0, 63, 1)',
+    'rgba(191, 0, 31, 1)',
+    'rgba(255, 0, 0, 1)'
+  ];
+  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+}
+
+function changeRadius() {
+  heatmap.set('radius', heatmap.get('radius') ? null : 20);
+};
+
+function changeOpacity() {
+  heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+};
+
+console.log(listenData)
+function getPoints() {
+  var heatPoints = [];
+  for(var i=0; i < listenData.length; i++){
+    heatPoints.push(new google.maps.LatLng(listenData[i].lat, listenData[i].long));
+  }
+  return heatPoints;
+}
+
+
+});
+
+// console.log(listenData)
+
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(input)
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
    map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
@@ -32,7 +107,7 @@ var x = document.getElementById("demo");
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
 
-    if (places.length == 0) {
+    if (places.length === 0) {
       return;
   }
 
@@ -83,14 +158,14 @@ var x = document.getElementById("demo");
     markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
     circleOptions: {
       fillColor: '#6ccbf7',
-      fillOpacity: .6,
+      fillOpacity: 0.6,
       strokeWeight: 1,
       clickable: true,
       editable: false,
       zIndex: 1
     }
   });
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(input)
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
   drawingManager.setMap(map);
   var all_overlays = [];
@@ -112,11 +187,11 @@ var x = document.getElementById("demo");
     else{
       return circle.radius;
     }
-  }
+  };
   $("#song_location_long").val(lng);
   $("#song_location_lat").val(lat);
   $("#song_location_radius").val(checkRadius(radius));
-  console.log($("#song_location_radius").val())
+  console.log($("#song_location_radius").val());
   // checks if there's more than one overlay, removes first one from map and array if true
   if (all_overlays.length > 1){
       all_overlays[0].overlay.setMap(null);

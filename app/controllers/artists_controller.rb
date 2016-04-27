@@ -22,7 +22,6 @@ class ArtistsController < ApplicationController
   def show
     @songs = Song.all
     @artist = Artist.find(params[:id])
-    p "_____________________________________________"
     artist_listens = song_listens(@artist.songs)
     if request.xhr?
       render :json => artist_listens, :only => [:listen_id, :long, :lat, :song_id]
