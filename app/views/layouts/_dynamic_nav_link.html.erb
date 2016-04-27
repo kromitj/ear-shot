@@ -1,0 +1,9 @@
+<% if request.env['PATH_INFO'].include?("users")%>
+  <% if @user.artists.count == 0%>
+    <%= link_to "Create Artist", new_artist_path, class: "nav-link "%>
+  <% else %>
+      <%= link_to "Manage Artist", artist_path, class: "nav-link "%>
+  <% end %>
+<% else %>
+  <%= link_to "User Home", user_path(current_user), class: "nav-link"%>
+<% end %>
