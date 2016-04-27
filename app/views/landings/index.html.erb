@@ -1,12 +1,27 @@
+
 <div id="home-jumbo" class="jumbotron text-center">
-  <div class="container">
-    <h1 class="logo">Ear Shot</h1>
-    <!-- <a class="btn btn-success btn-lg sign-up-landing-btn" href="/users/new">Sign up </a> -->
-    <%=render '/shared/flash' %>
-    <%=render '/shared/errors' %>
-    <%= link_to "Sign In", new_session_path,  class: "sign-in-btn" %>
-    <%= link_to "Register", new_user_path,  class: "register-btn" %>
-    <section class="signin-register-form-wrapper"></section>
-    <div class="form-holder center-block"style="height:0;"></div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>EarShot</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%=render '/shared/flash' %>
+          <%=render '/shared/errors' %>
+          <%= link_to "Sign In", new_session_path,  class: "sign-in-bttn btn-primary btn-lg" %>
+          <%= link_to "Register", new_user_path,  class: "register-bttn btn-primary btn-lg" %>
+          <section class="signin-register-form-wrapper"></section>
+          <br>
+          <div class="form-holder center-block"style="height:0;"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
