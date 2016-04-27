@@ -24,10 +24,12 @@ class RequestsController < ApplicationController
     render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
     print return_array
 
+
     # def active_songs
     active_songs_array = active_songs(@songs)
     nearby_songs_array = nearby_songs(active_songs_array, @user_loc)
     render :json => nearby_songs_array, :include {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}, :favorites, :listens}
+git
   end
 
 private
