@@ -40,6 +40,12 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
   end
 
+  def drop_song
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts "inside ajx"
+      render'/artists/_artist_drop_song', layout: false
+  end
+
   def destroy
     @song = Song.find(params[:id])
     @song.destroy

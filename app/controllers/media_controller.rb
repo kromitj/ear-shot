@@ -1,1 +1,0 @@
-MediaController > ApplicationController

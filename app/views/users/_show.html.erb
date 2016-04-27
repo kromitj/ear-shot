@@ -6,7 +6,9 @@
 </ul>
 <div class="tab-content">
   <% @user.artists.each do |artist|%>
-    <%= render 'artists/show'%>
+    <% @artist = artist%>
+    <%= render 'artists/show' %>
   <% end %>
 </div>
 
+z
