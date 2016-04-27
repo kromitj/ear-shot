@@ -20,10 +20,9 @@ class RequestsController < ApplicationController
         return_array.push(song)
       else
         p false
-
       end
     end
-    render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}
+    render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
     print return_array
 
 
