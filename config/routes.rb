@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   delete '/session/logout' => 'session#destroy'
   get '/songs/drop_song' => 'songs#drop_song'
+  get '/songs/heat_map/:id' => 'songs#heat_map'
 
   resources :requests
   # The priority is based upon order of creation: first created -> highest priority.
