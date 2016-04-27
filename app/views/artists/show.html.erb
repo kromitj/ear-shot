@@ -104,13 +104,13 @@
 <h3>Song Activity</h3>
 <div id="message"></div>
 <div id="button-group">
-  <span class="btn btn-primary">Filter HeatMap by Song
+  <div class="section section-primary"><span>Filter HeatMap by Song</span>
     <%@artist.songs.each do |song|%>
     <button class="heatmap-button btn btn-primary" id="<%=song.id%>"><%=song.name%></button>
     <%end%>
     <button class="btn btn-primary" id="all">ALL</button>
-  </div></span>
-<div id="heatmap-container">
+  </div></div>
+  <div id="heatmap-container">
 
   <div id="heatmap"></div></div>
 
