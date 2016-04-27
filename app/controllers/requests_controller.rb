@@ -7,7 +7,6 @@ class RequestsController < ApplicationController
 
     @song_list = []
     @user_loc = [params[:lat], params[:long]]
-    @test_loc =[40.7484, 73.9857]
 
     @songs.each do |song|
       array = []
@@ -20,6 +19,7 @@ class RequestsController < ApplicationController
       end
     end
     render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
+
     print return_array
 
 
@@ -53,7 +53,6 @@ class RequestsController < ApplicationController
 
     result = distance_between(@user_loc, @test_loc)
     puts result
-
 
   end
 

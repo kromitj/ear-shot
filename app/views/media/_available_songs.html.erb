@@ -1,18 +1,14 @@
 <div class="media-left">
   <h2>Available Songs</h2>
   <ul class="nav nav-pills">
-    <li><a data-toggle="pill" href="#all_songs">All</a></li>
+    <li><a class="all-songs-tab" data-toggle="pill" href="#all_songs">All</a></li>
     <li><a data-toggle="pill" href="#favorite_songs">Favorites</a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="all_songs" class="tab-pane fade">
-      <!-- <p>render songlist of all songs here</p> -->
-      <%= render '/songs/all_songs' %>
-
-    </div>
+    <div id="all_songs" class="all-songs-wrapper tab-pane fade"></div>
     <div id="favorite_songs" class="tab-pane fade">
-      <p>render songlist of favorite songs here</p>
+      <%= render "/media/favorite_songs" %>
     </div>
   </div>
 </div>

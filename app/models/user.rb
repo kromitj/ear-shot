@@ -16,4 +16,15 @@ class User < ActiveRecord::Base
     self.artists.count > 0
   end
 
+  def available_songs(long, lat, all_songs)
+    all_songs.select do |song|
+      puts "song radius: #{song.locations.first.radius}"
+      puts "song.name: #{song.in_range?(lat, long)}"
+      song.in_range?(lat, long)
+    end
+  end
+
+def distance_between(user_lat, user_long, song_lat, song_long)
+  earth_radius = 6378.137
+end
 end
