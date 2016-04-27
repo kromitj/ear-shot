@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :users, except: [:index] do
-    resources :media, only: [:show]
-  end
+
+  resources :users, except: [:index]
+
   resources :artists do
     resources :songs
   end
