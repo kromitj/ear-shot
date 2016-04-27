@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :users, except: [:index]
 
   resources :artists do
@@ -11,8 +12,9 @@ Rails.application.routes.draw do
   resources :session, except: [:destroy]
   resources :comments
   # resources :session, only: [:new, :create,]
-  get '/logout' => 'session#logout'
 
+  delete '/session/logout' => 'session#destroy'
+  get '/songs/drop_song' => 'songs#drop_song'
 
   resources :requests
   # The priority is based upon order of creation: first created -> highest priority.

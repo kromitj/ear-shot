@@ -11,18 +11,24 @@ class SongsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     song_data = params[:song][:attachment]
     art_data = params[:song][:artwork]
-    song_obj = S3_BUCKET.objects.create(song_data.original_filename, song_data.tempfile)
-    art_obj = S3_BUCKET.objects.create(art_data.original_filename, art_data.tempfile)
-    root = "http://ear-shot-mp3.s3.amazonaws.com/"
-    song_url = root + song_data.original_filename
-    art_url = root + art_data.original_filename
-    @song = @artist.songs.new(name: params[:song][:name], attachment: song_url, artwork: art_url)
-    @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
-    if @song.save && @location.save
-      redirect_to @artist
+    if song_data != nil && art_data != nil
+      song_obj = S3_BUCKET.objects.create(song_data.original_filename, song_data.tempfile)
+      art_obj = S3_BUCKET.objects.create(art_data.original_filename, art_data.tempfile)
+      root = "http://ear-shot-mp3.s3.amazonaws.com/"
+      song_url = root + song_data.original_filename
+      art_url = root + art_data.original_filename
+      @song = @artist.songs.new(name: params[:song][:name], attachment: song_url, artwork: art_url)
+      @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
+      if @song.save && @location.save
+        redirect_to @artist
+      else
+        @errors = ["Make sure you've selected a location","Make sure you've entered a name","Make sure you're file is an mp3"]
+        render "/artists/show"
+      end
     else
-      @errors = ["Make sure you've selected a location","Make sure you've entered a name","Make sure you're file is an mp3"]
-      render "/artists/show"
+      @errors = ["Something went wrong, try again!"]
+      # render "/artists/show"
+      redirect_to @artist
     end
   end
 
@@ -38,6 +44,12 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find(params[:id])
+  end
+
+  def drop_song
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts "inside ajx"
+      render'/artists/_artist_drop_song', layout: false
   end
 
   def destroy

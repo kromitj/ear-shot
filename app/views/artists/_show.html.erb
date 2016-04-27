@@ -1,0 +1,16 @@
+<div class="row user-show-app">
+  <section class="artist-bio col-lg-offset-2 col-ex-12 col-lg-3">
+      <%= render 'artists/artist_bio' %>
+  </section>
+  <section class="artist-active-songs col-ex-12 col-lg-4">
+    <%= render 'artists/active_songs' %>
+  </section>
+</div>
+
+<div class="row">
+
+  <section class="artist-drop-song col-md-offset-3 col-lg-9">
+    <button type="button" class="drop-song-btn btn btn-primary btn-lg text-center center-block">Drop Song</button>
+    <%= render 'artists/artist_drop_song' %>
+  </section>
+</div>
