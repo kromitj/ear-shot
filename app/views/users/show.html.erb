@@ -1,2 +1,75 @@
-<%= render 'users/show' %>
+
+<div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Welcome <%=@user.username%></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4"></div>
+      </div>
+    </div>
+    <section class="module parallax parallax-1">
+    <div class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="span4"></div>
+          <div class="span4">
+            <img class="center-block img-rounded" src="https://unsplash.imgix.net/photo-1421986527537-888d998adb74?w=1024&amp;q=50&amp;fm=jpg&amp;s=e633562a1da53293c4dc391fd41ce41d"
+            width="304" height="236">
+          </div>
+          <div class="span4"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Favorite Songs</h1>
+          </div>
+          <div class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <% @user.favorites.each do |fav| %>
+                  <ol class="list-unstyled text-center text-muted">
+                    <li style="font-size:20px;"><%= fav.song.name %></li>
+                    <li style="font-size:20px;">Dropped by: <%= fav.song.artist.name%></li>
+                  </ol>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <% if @user.artists.count > 0 %>
+                  <h1 class="text-center"><%= link_to "Manage Artist Profile", artist_path, class: "nav-link " %></h1>
+                  <%else%>
+                  <h1 class="text-center">Manage Artist Profile</h1>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
