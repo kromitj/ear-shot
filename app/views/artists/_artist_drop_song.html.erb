@@ -1,14 +1,18 @@
-<div class="col-lg-5" id="drop-song-form">
-  <div class="col-md-12">
-    <h1 class="text-center">Drop Song</h1>
+<div class="col-lg-10" id="drop-song-form">
+  <%= render partial: '/shared/errors', locals: {errors: @errors} %>
+  <%= render '/shared/flash' %>
+  <div class="row">
+    <div class="col-md-10">
+      <h1 class="text-center">Drop Song</h1>
+    </div>
   </div>
-  <div class="col-md-12">
-    <p id="demo"></p>
-    <%=render partial: '/shared/map'%>
-    <button id="reset">Reset</button>
-    <br><br>
-    <%= render partial: '/shared/errors', locals: {errors: @errors} %>
-    <%= render '/shared/flash' %>
-    <%= render 'songs/new', locals: {song: @song} %>
+  <div class="row">
+    <div class="col-md-5">
+      <%=render partial: '/shared/map'%>
+      <button id="reset">Reset</button>
+    </div>
+    <div class="col-md-5">
+      <%= render 'songs/new', locals: {song: @song} %>
+    </div>
   </div>
 </div>

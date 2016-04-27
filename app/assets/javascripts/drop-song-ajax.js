@@ -1,6 +1,7 @@
 $( document ).ready(function() {
+  alert("yo")
  $('.drop-song-btn').on('click', function(event) {
-  event.preventDefault();
+  alert("yo");
   $('#drop-song-form').toggle();
- })
+ });
 });
