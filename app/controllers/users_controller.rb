@@ -45,6 +45,8 @@ class UsersController < ApplicationController
     end
   end
 
+
+
   def destroy
     @user.destroy
     session.delete(:user_id)
