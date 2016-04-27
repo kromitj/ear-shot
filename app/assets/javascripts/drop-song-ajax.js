@@ -1,7 +1,7 @@
 $( document ).ready(function() {
-  alert("yo")
+  // alert("yo")
  $('.drop-song-btn').on('click', function(event) {
-  alert("yo");
+  // alert("yo");
   $('#drop-song-form').toggle();
  });
 });

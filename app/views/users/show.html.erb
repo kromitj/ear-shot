@@ -23,7 +23,7 @@
       </div>
     </div>
     <section class="module parallax parallax-1">
-    <div class="section section-primary">
+    <div class="section">
       <div class="container">
         <div class="row">
           <div class="span4"></div>
@@ -63,7 +63,7 @@
                   <% if @user.artists.count > 0 %>
                   <h1 class="text-center"><%= link_to "Manage Artist Profile", artist_path, class: "nav-link " %></h1>
                   <%else%>
-                  <h1 class="text-center">Manage Artist Profile</h1>
+                  <h1 class="text-center"><%= link_to "Create Artist Profile", new_artist_path%></h1>
                   <%end%>
                 </div>
               </div>
@@ -72,4 +72,3 @@
         </div>
       </div>
     </div>
-
