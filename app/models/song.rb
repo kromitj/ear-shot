@@ -14,7 +14,6 @@ class Song < ActiveRecord::Base
   accepts_nested_attributes_for :locations
 
   validates :name, :attachment, presence: true
-
   # def song_location
   #   self.locations.first.lat.to_s + ", " + self.locations.first.long.to_s
   # end
