@@ -1,4 +1,4 @@
-var map, heatmap;
+var songsMap, heatmap;
 
 function initMap() {
 
@@ -8,7 +8,7 @@ function initMap() {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
   function createMap(position) {
-    map = new google.maps.Map(document.getElementById('heatmap'), {
+    songsMap = new google.maps.Map(document.getElementById('heatmap'), {
       zoom: 13,
       center: {lat: position.coords.latitude, lng: position.coords.longitude},
       mapTypeId: google.maps.MapTypeId.SATELLITE
@@ -16,12 +16,12 @@ function initMap() {
 
     heatmap = new google.maps.visualization.HeatmapLayer({
       data: getPoints(),
-      map: map
+      map: songsMap
     });
   }
 
   function toggleHeatmap() {
-    heatmap.setMap(heatmap.getMap() ? null : map);
+    heatmap.setMap(heatmap.getMap() ? null : songsMap);
   }
 
   function changeGradient() {
@@ -51,4 +51,9 @@ function initMap() {
   function changeOpacity() {
     heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
   }
+
+  // var ajaxRequest = $.ajax({
+  //   type: "GET"
+  //   url: '/'
+  // });
 }

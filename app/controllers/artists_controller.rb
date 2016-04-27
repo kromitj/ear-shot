@@ -24,7 +24,11 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     p "_____________________________________________"
     artist_listens = song_listens(@artist.songs)
-    render :json => artist_listens, {:only => [:listen_id, :long, :lat, :song_id]}
+    if request.xhr?
+      render :json => artist_listens, :only => [:listen_id, :long, :lat, :song_id]
+    else
+      render 'show'
+    end
   end
 
   def destroy
