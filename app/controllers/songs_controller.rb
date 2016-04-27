@@ -8,15 +8,15 @@ class SongsController < ApplicationController
   end
 
   def create
-    p "$$$$$$$$$$$$$$$$$$$$$"
-    p params
-    p "$$$$$$$$$$$$$$$$$$$$$"
     @artist = Artist.find(params[:artist_id])
-    @song = @artist.songs.new(name: params[:song][:name], attachment: params[:song][:attachment], artwork: params[:song][:artwork])
     song_data = params[:song][:attachment]
     art_data = params[:song][:artwork]
-    song_obj = S3_BUCKET.objects.create("#{@artist.name}: #{params[:song][:name]}", song_data.tempfile)
-    art_obj = S3_BUCKET.objects.create("#{@artist.name}: #{params[:song][:name]}(Artwork)", art_data.tempfile)
+    song_obj = S3_BUCKET.objects.create(song_data.original_filename, song_data.tempfile)
+    art_obj = S3_BUCKET.objects.create(art_data.original_filename, art_data.tempfile)
+    root = "http://ear-shot-mp3.s3.amazonaws.com/"
+    song_url = root + song_data.original_filename
+    art_url = root + art_data.original_filename
+    @song = @artist.songs.new(name: params[:song][:name], attachment: song_url, artwork: art_url)
     @location = @song.locations.new(expiration: params[:song][:location][:expiration], lat: params[:song][:location][:lat], long: params[:song][:location][:long], radius: params[:song][:location][:radius] )
     if @song.save && @location.save
       redirect_to @artist
@@ -29,6 +29,11 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    if request.xhr?
+      render '_show', layout: false, locals: {song: @song}
+    else
+      render 'show'
+    end
   end
 
   def update

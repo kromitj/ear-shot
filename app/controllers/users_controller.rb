@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
   def show
     @user = User.find(params[:id])
+    @songs = Song.all
   end
 
   def new
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to show
+      redirect_to "/users/#{@user.id}"
     else
       render 'edit'
     end
