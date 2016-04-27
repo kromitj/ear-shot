@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :mobile
   resources :favorites
+  resources :listens
 
   resources :session, except: [:destroy]
   resources :comments
