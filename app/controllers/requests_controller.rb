@@ -17,11 +17,12 @@ class RequestsController < ApplicationController
       if distance_between(@user_loc, array) < song.locations.first.radius
         return_array.push(song)
       else
-        p false
-
+        false
       end
     end
-    render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}
+
+    render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
+    print return_array
 
     # def active_songs
     active_songs_array = active_songs(@songs)
