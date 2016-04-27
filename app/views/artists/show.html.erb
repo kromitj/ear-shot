@@ -92,7 +92,7 @@
       <div class="col-md-12">
         <p id="demo"></p>
         <%=render partial: '/shared/map'%>
-        <button id="reset">Reset</button>
+        <button class="btn btn-primary" id="reset">Reset</button>
         <br><br>
         <%= render partial: '/shared/errors', locals: {errors: @errors} %>
         <%= render '/shared/flash' %>
@@ -103,11 +103,14 @@
 </div>
 <h3>Song Activity</h3>
 <div id="message"></div>
-<div id="heatmap-container">
-  <div><%@artist.songs.each do |song|%>
-    <button class="heatmap-button" id="<%=song.id%>"><%=song.name%></button>
+<div id="button-group">
+  <span class="btn btn-primary">Filter HeatMap by Song
+    <%@artist.songs.each do |song|%>
+    <button class="heatmap-button btn btn-primary" id="<%=song.id%>"><%=song.name%></button>
     <%end%>
-    <button id="all">ALL</button>
-  </div>
+    <button class="btn btn-primary" id="all">ALL</button>
+  </div></span>
+<div id="heatmap-container">
+
   <div id="heatmap"></div></div>
 
