@@ -31,6 +31,7 @@ class Song < ActiveRecord::Base
   #   self.address_components.address[3]["short_name"]
   # end
 
+
   def neighborhood
     self.locations.first.neighborhood
   end
