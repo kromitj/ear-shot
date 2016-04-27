@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">Add Artist</a></li>
+  <% @user.artists.each do |artist|%>
+    <li><%= link_to artist.name, artist_path(artist)%></li>
+  <% end %>
+</ul>
+<div class="tab-content">
+  <% @user.artists.each do |artist|%>
+    <% @artist = artist%>
+    <%= render 'artists/show' %>
+  <% end %>
+</div>
+
+
