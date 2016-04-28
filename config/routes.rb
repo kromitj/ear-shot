@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   delete '/session/logout' => 'session#destroy'
   get '/songs/drop_song' => 'songs#drop_song'
+  post '/songs/available' => 'songs#available_songs'
+
   get '/songs/heat_map/:id' => 'songs#heat_map'
 
   resources :requests
