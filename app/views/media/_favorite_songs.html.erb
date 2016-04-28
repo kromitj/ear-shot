@@ -1,25 +1,18 @@
-<ul class="list-group">
+
+<table class="table">
   <% current_user.favorites.each do |favorite| %>
-    <li class="list-group-item">
-      <div>
-        <div class="row container-fluid ">
-          <div class="col-sm-3 jumbotron-icon">
-            <!-- <i class="fa fa-play fa-4" aria-hidden="true"></i> -->
-            <!-- audio player here -->
-            <audio id="song<%= favorite.id %>" class="media-songs" src="<%= favorite.song.attachment %>"></audio>
-              <div>
-              <button  class="media-play-btn" song="<%= favorite.id%>">play</button>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <img class="artwork-thumbnail" src="<%= favorite.song.artwork %>">
-          </div>
-          <div class="col-sm-6">
-            <div class="row"><%= favorite.song.name %><br></div>
-            <div class="row"><%= favorite.song.artist.name %></div>
-          </div>
-        </div>
-      </div>
-    </li>
+  <tr>
+    <td>
+      <audio id="song<%= favorite.id %>" class="media-songs" src="<%= favorite.song.attachment %>"></audio>
+          <button class="media-play-btn btn btn-default" song="<%= favorite.id%>"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+          </button>
+
+      </button>
+    </td>
+    <td><img class="artwork-thumbnail" src="<%= favorite.song.artwork %>"></td>
+    <td><%= favorite.song.name %></td>
+    <td><%= favorite.song.artist.name %></td>
+
+  </tr>
   <% end %>
-</ul>
+</table>
