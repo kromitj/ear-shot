@@ -11,36 +11,36 @@ require 'faker'
 
 Artist.create(name: "Money Makin Mitch", user_id: 1, hometown: "Chi-Town", bio: "A lot has been said about mitch the moneymaker", profile_picture: Faker::Avatar.image)
 
-Artist.create(name: "yaboichrissyb", user_id: 2, hometown: "Chicago", bio: "West Philadelphia born and raised", profile_picture: Faker::Avatar.image)
+# Artist.create(name: "yaboichrissyb", user_id: 2, hometown: "Chicago", bio: "West Philadelphia born and raised", profile_picture: Faker::Avatar.image)
 
 
 52.times do
-  Favorite.create(song_id: 19, user_id: 1)
+  Favorite.create(song_id: 1, user_id: 1)
 end
 
 357.times do
-  Favorite.create(song_id: 18, user_id: 1)
+  Favorite.create(song_id: 2, user_id: 1)
 end
 
 671.times do
-  Favorite.create(song_id: 17, user_id: 1)
+  Favorite.create(song_id: 3, user_id: 1)
 end
 
 
 248.times do
-  Listen.create(user_id: 1, song_id: 17, long: rand(-87.6351..-87.635),lat: rand(41.88..41.89))
+  Listen.create(user_id: 1, song_id: 1, long: rand(-87.6351..-87.635),lat: rand(41.88..41.89))
 end
 
 104.times do
-  Listen.create(user_id: 1, song_id: 17, long: rand(-87.64..-87.63), lat: rand(41.89..41.93))
+  Listen.create(user_id: 1, song_id: 1, long: rand(-87.64..-87.63), lat: rand(41.89..41.93))
 end
 
 54.times do
-  Listen.create(user_id: 1, song_id: 19, long: rand(-77.5..-77.47), lat: rand(18.25..18.3))
+  Listen.create(user_id: 1, song_id: 2, long: rand(-77.5..-77.47), lat: rand(18.25..18.3))
 end
 
 120.times do
-  Listen.create(user_id: 1, song_id: 19, long: rand(-87.7..-87.69), lat: rand(41.908409..41.90892))
+  Listen.create(user_id: 1, song_id: 3, long: rand(-87.7..-87.69), lat: rand(41.908409..41.90892))
 end
 
 
