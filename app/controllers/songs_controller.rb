@@ -52,7 +52,7 @@ class SongsController < ApplicationController
   end
 
 
-    def available_songs
+  def available_songs
     longitude = params[:longitude]
     latitude = params[:latitude]
     # longitude = "1000000000000"
@@ -62,6 +62,7 @@ class SongsController < ApplicationController
     @songs = current_user.available_songs(longitude, latitude, all_songs)
     puts "available songs: #{@songs.count}"
     render partial: 'songs/all_songs', layout: false
+  end
 
   def heat_map
     if request.xhr?
