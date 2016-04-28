@@ -2,16 +2,16 @@
 <table class="table">
   <% current_user.favorite_active_songs.each do |favorite| %>
   <tr>
-    <td>
+    <td class="media-column">
       <audio id="song<%= favorite.id %>" class="media-songs" src="<%= favorite.song.attachment %>"></audio>
           <button class="media-play-btn btn btn-default" song="<%= favorite.id%>"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>
           </button>
 
       </button>
     </td>
-    <td><img class="artwork-thumbnail" src="<%= favorite.song.artwork %>"></td>
-    <td><%= favorite.song.name %></td>
-    <td><%= favorite.song.artist.name %></td>
+    <td class="media-column"><img class="artwork-thumbnail" src="<%= favorite.song.artwork %>"></td>
+    <td class="media-column"><%= favorite.song.name %></td>
+    <td class="media-column"><%= favorite.song.artist.name %></td>
 
   </tr>
 
