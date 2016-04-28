@@ -22,42 +22,29 @@ class RequestsController < ApplicationController
     end
 
     render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
-
-
-
-    # # def active_songs
-    # active_songs_array = active_songs(@songs)
-    # nearby_songs_array = nearby_songs(active_songs_array, @user_loc)
-    # render :json => nearby_songs_array, :include {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}, :favorites, :listens}
   end
 
   def near
     @songs = Song.all
     @artists = Artist.all
+
     return_array =[]
 
     @song_list = []
-    p"++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    p params
     @user_loc = [params[:lat], params[:long]]
-    @test_loc =[40.7484, 73.9857]
 
     @songs.each do |song|
       array = []
       array.push(song.locations.first.lat)
       array.push(song.locations.first.long)
-      if distance_between(@user_loc, array) < song.locations.first.radius*1610  && song.locations.first.expiration >= Time.now
+      if distance_between(@user_loc, array) < song.locations.first.radius*1600 && song.locations.first.expiration >= Time.now
         return_array.push(song)
+      else
+        false
       end
     end
-    print active_songs(return_array)
+
     render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
-
-
-
-    result = distance_between(@user_loc, @test_loc)
-    puts result
-
 
   end
 
