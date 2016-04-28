@@ -1,22 +1,38 @@
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :f_name %><br>
+<div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 text-left">
+          <%= form_for @user, :html => {:role => "form", :class => "registration-form"} do |f| %>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :l_name %><br>
+          <div class="form-group">
+            <%= f.text_field :f_name, class: "form-control", placeholder: "First Name" %>
+          </div>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %><br>
+          <div class="form-group">
+            <%= f.text_field :l_name, class: "form-control", placeholder: "Last Name" %>
+          </div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
+          <div class="form-group">
+            <%= f.text_field :username, class: "form-control", placeholder: "Username" %>
+          </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
+          <div class="form-group">
+            <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+          </div>
 
-  <%= f.label :confirm_password %>
-  <%= f.password_field :password_confirmation %><br>
+          <div class="form-group">
+            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+          </div>
 
-  <%= f.submit "Register" %>
-
-<% end %>
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+          </div>
+          <div class="input-group">
+          <%= f.submit "Register", class: "btn btn-default" %>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
