@@ -1,6 +1,7 @@
+var userMap;
+var circle;
 
-
-function initMap(){
+function initUserMap(){
 // var position;
 var x = document.getElementById("demo");
   // function getLocation() {
@@ -13,12 +14,18 @@ var x = document.getElementById("demo");
   // getLocation();
 
   function createMap(position) {
-    map = new google.maps.Map(document.getElementById('user-map'), {
+    userMap = new google.maps.Map(document.getElementById('user-map'), {
       center: {lat: position.coords.latitude, lng: position.coords.longitude},
       zoom: 13
     });
 
-    var ajaxRequest =
+    // var ajaxRequest = $.ajax({
+    //   type: "GET",
+    //   url: '/requests'
+    // });
+
+
+
 
 
   }

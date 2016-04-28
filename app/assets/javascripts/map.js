@@ -1,10 +1,13 @@
 // $(document).ready(function(){
+
+
   var map;
   var songsMap;
   var circle;
   var heatMap;
 
   function initMap(){
+    console.log("IN");
 // var position;
 var x = document.getElementById("demo");
   // function getLocation() {
@@ -94,7 +97,8 @@ var x = document.getElementById("demo");
 
 
 
-});
+
+  });
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 $("#all").on("click", function(){
@@ -106,6 +110,7 @@ $("#all").on("click", function(){
  ajaxRequest.done(function(response){
   var allListenData = [];
   var songsArray = response;
+
   for(var i=0; i < songsArray.length; i++){
     var songListens = songsArray[i];
     for(var j=0; j < songListens.length; j++){
@@ -160,6 +165,7 @@ $("#all").on("click", function(){
     function getPoints() {
       var songHeatPoints = [];
       for(var i=0; i < allListenData.length; i++){
+
         songHeatPoints.push(new google.maps.LatLng(allListenData[i].lat, allListenData[i].long));
       }
       console.log(songHeatPoints);
@@ -168,6 +174,7 @@ $("#all").on("click", function(){
   });
 
 });
+
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -236,6 +243,7 @@ $(".heatmap-button").on("click", function(){
     }
 
   });
+
 
    // create new map for heatmap
 

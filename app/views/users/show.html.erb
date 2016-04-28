@@ -1,11 +1,42 @@
-    <section class="row greetings-wrapper">
-      <%= render 'users/greeting'%>
+<div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Welcome <%=@user.username%></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4"></div>
+      </div>
+    </div>
+    <section class="module parallax parallax-1">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="span4"></div>
+          <div class="span4">
+            <img class="center-block img-rounded" src="https://unsplash.imgix.net/photo-1421986527537-888d998adb74?w=1024&amp;q=50&amp;fm=jpg&amp;s=e633562a1da53293c4dc391fd41ce41d"
+            width="304" height="236">
+          </div>
+          <div class="span4"></div>
+        </div>
+      </div>
+    </div>
     </section>
 
-    <section class="row parallax-wrapper module parallax parallax-1">
-      <%= render 'users/parallax'%>
-    </section>
-
+ <div class="section">
   <main class="container">
     <section class="row user-info-wrapper">
       <%= render 'users/user_content'%>
@@ -47,4 +78,5 @@
       </div>
     </div>
   </main>
+</div>
 <div id="map-container"><div id="user-map"></div></div>
