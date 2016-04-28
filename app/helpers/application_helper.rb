@@ -4,17 +4,7 @@ module ApplicationHelper
   dLat = ()
   end
 
-  def determine_user_device
-
-  end
-
-  def user_on_mobile?
-    session[:user_devise] ||=
-  end
-
-end
-
-def measure(lat1, lon1, lat2, lon2)
+  def measure(lat1, lon1, lat2, lon2)
     radius = 6378.137 # Radius of earth in KM
     dLat = (lat2 - lat1) * Math::PI / 180;
     dLon = (lon2 - lon1) * Math::PI / 180;
@@ -24,5 +14,5 @@ def measure(lat1, lon1, lat2, lon2)
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a));
     d = radius * c;
     return d * 1000; # meters
-
+  end
 end
