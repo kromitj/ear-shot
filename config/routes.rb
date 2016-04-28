@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
   resources :mobile
   resources :favorites
-  resources :listens
 
   resources :session, except: [:destroy]
   resources :comments
@@ -16,13 +15,12 @@ Rails.application.routes.draw do
 
   delete '/session/logout' => 'session#destroy'
   get '/songs/drop_song' => 'songs#drop_song'
-  post '/songs/available' => 'songs#available_songs'
 
-  get '/songs/heat_map/:id' => 'songs#heat_map'
 
   resources :requests
-
   get '/near/requests' => 'requests#near'
+  get '/near/requests/:params' => 'requests#near_songs'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
