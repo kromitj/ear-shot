@@ -1,10 +1,86 @@
-#home-jumbo {
-  width: 100%;
-  height: 100%;
-  background-image: url(image-path('2014-05-09-WickerParkFest_0-1.jpg'));
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+.cb-slideshow,
+.cb-slideshow:after {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+.cb-slideshow:after {
+    content: '';
+    background: transparent url(image-path('2014-05-09-WickerParkFest_0-1.jpg') )repeat none;
+}
+
+.cb-slideshow li span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 36s linear infinite 0s;
+}
+
+.cb-slideshow li:nth-child(1) span {
+    background-image: url(image-path('2014-05-09-WickerParkFest_0-1.jpg'))
+}
+.cb-slideshow li:nth-child(2) span {
+    background-image: url(image-path('Twin-Peaks-SXSW-2015-VirgilSolis-3-1230x820.jpg'));
+    animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) span {
+    background-image: url(image-path('801ba22bf9bc23fb4bf401ffc5c83159.jpg'));
+    animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) span {
+    background-image: url(image-path('IMG_6466.jpg'));
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) span {
+    background-image: url(image-path('R0015530.jpg'));
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) span {
+    background-image: url(image-path('SAVEMONEY.jpg'));
+    animation-delay: 30s;
 }
 
 
+.cb-slideshow li:nth-child(2) div {
+    animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) div {
+    animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) div {
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) div {
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) div {
+    animation-delay: 30s;
+}
+
+
+@keyframes imageAnimation {
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+.no-cssanimations .cb-slideshow li span{
+  opacity: 1;
+}
+
+.jumbotron{
+  background-color: white;
+}
