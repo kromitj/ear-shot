@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
       array = []
       array.push(song.locations.first.lat)
       array.push(song.locations.first.long)
-      if distance_between(@user_loc, array) < song.locations.first.radius
+      if distance_between(@user_loc, array) < song.locations.first.radius && song.locations.first.expiration >= Time.now
         return_array.push(song)
       else
         false
@@ -46,11 +46,11 @@ class RequestsController < ApplicationController
       array = []
       array.push(song.locations.first.lat)
       array.push(song.locations.first.long)
-      if distance_between(@user_loc, array) < song.locations.first.radius*1610
+      if distance_between(@user_loc, array) < song.locations.first.radius*1610  && song.locations.first.expiration >= Time.now
         return_array.push(song)
       end
     end
-    print return_array
+    print active_songs(return_array)
     render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
 
 
