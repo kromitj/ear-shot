@@ -6,6 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
+# User.create(f_name: "Mitch", l_name: "Kromit", username: "kromitj", email: "kromitj@hotmail.com", :password: "password", profile_picture: Faker::Avatar.image)
+# User.create(f_name: "Chris", l_name: "Bunkers", username: "chrissyb", email: "chris@gmail.com", :password: "password", profile_picture: Faker::Avatar.image)
+
+Artist.create(name: "Money Makin Mitch", user_id: 1, hometown: "Chi-Town", bio: "A lot has been said about mitch the moneymaker", profile_picture: Faker::Avatar.image)
+
+Artist.create(name: "yaboichrissyb", user_id: 2, hometown: "Chicago", bio: "West Philadelphia born and raised", profile_picture: Faker::Avatar.image)
+
 
 52.times do
   Favorite.create(song_id: 19, user_id: 1)
@@ -24,15 +31,15 @@ end
   Listen.create(user_id: 1, song_id: 17, long: rand(-87.6351..-87.635),lat: rand(41.88..41.89))
 end
 
-1014.times do
+104.times do
   Listen.create(user_id: 1, song_id: 17, long: rand(-87.64..-87.63), lat: rand(41.89..41.93))
 end
 
-504.times do
+54.times do
   Listen.create(user_id: 1, song_id: 19, long: rand(-77.5..-77.47), lat: rand(18.25..18.3))
 end
 
-1520.times do
+120.times do
   Listen.create(user_id: 1, song_id: 19, long: rand(-87.7..-87.69), lat: rand(41.908409..41.90892))
 end
 
