@@ -22,7 +22,12 @@ class ArtistsController < ApplicationController
   def show
     @songs = Song.all
     @artist = Artist.find(params[:id])
-    @songs = Song.all
+    artist_listens = song_listens(@artist.songs)
+    if request.xhr?
+      render :json => artist_listens, :only => [:listen_id, :long, :lat, :song_id]
+    else
+      render 'show'
+    end
   end
 
   def destroy
@@ -35,6 +40,14 @@ private
 
   def artist_params
     params.require(:artist).permit(:name, :hometown, :bio, :profile_picture)
+  end
+
+  def song_listens(song_collection)
+    listen_array = []
+    song_collection.each do |song|
+      listen_array << song.listens
+    end
+    listen_array
   end
 
 end
