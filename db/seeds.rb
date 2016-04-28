@@ -8,7 +8,7 @@
 require 'faker'
 
 248.times do
-  Listen.create(user_id: 1, song_id: 17, lat: rand(41.88..41.89), long: rand(-87.635..-87.6351)
+  Listen.create(user_id: 1, song_id: 17, lat: rand(41.88..41.89), long: rand(-87.635..-87.6351))
 end
 
 1014.times do
