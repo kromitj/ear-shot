@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   # require 'aws/s3'
-  skip_before_action :redirect_visitors
+
 
   def new
     @artist = Artist.find(params[:artist_id])
