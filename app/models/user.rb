@@ -24,7 +24,17 @@ class User < ActiveRecord::Base
     end
   end
 
-def distance_between(user_lat, user_long, song_lat, song_long)
-  earth_radius = 6378.137
-end
+  def distance_between(user_lat, user_long, song_lat, song_long)
+    earth_radius = 6378.137
+  end
+
+  def favorite_active_songs
+    active_songs = []
+    self.favorites.each do |favorite|
+      if favorite.song.locations.first.active?
+        active_songs << favorite
+      end
+    end
+    active_songs
+  end
 end
