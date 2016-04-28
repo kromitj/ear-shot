@@ -7,10 +7,20 @@
   </section>
 </article>
 
-<article class="module parallax parallax-1">
-        <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
-        width="304" height="236">
-</article>
+<section class="module parallax parallax-1">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4">
+          <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
+          width="304" height="236">
+        </div>
+        <div class="span4"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <main class="container">
   <article class="row user-info-wrapper">
