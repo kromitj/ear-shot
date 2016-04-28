@@ -5,7 +5,6 @@
   var heatMap;
 
   function initMap(){
-    console.log("IN");
 // var position;
 var x = document.getElementById("demo");
   // function getLocation() {
