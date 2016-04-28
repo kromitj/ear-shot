@@ -12,15 +12,15 @@ require 'faker'
 end
 
 1014.times do
-  Listen.create(user_id: 1, song_id: 17, lat: rand(41.89..41.93), long: rand(-87.63..-87.64))
+  Listen.create(user_id: 1, song_id: 17, long: rand(-87.64..-87.63), lat: rand(41.89..41.93))
 end
 
 504.times do
-  Listen.create(user_id: 1, song_id: 19, lat: rand(18.25..18.3), long: rand(-77.47..-77.5))
+  Listen.create(user_id: 1, song_id: 19, long: rand(-77.5..-77.47), lat: rand(18.25..18.3))
 end
 
 1520.times do
-  Listen.create(user_id: 1, song_id: 19, lat: rand(41.908409..41.90892), long: rand(-87.700..-87.699))
+  Listen.create(user_id: 1, song_id: 19, long: rand(-87.69..-87.7), lat: rand(41.908409..41.90892))
 end
 
 52.times do
