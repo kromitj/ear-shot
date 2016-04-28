@@ -45,7 +45,8 @@ class RequestsController < ApplicationController
       end
     end
 
-    render :json => return_array, :include => { :comments => {:only => [:content]}}, :include => :locations, :include => :artist
+    render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
+
   end
 
   def near_songs
