@@ -154,7 +154,6 @@
 // // }
 // // });
 
-
 // // Gets audio file duration
 // music.addEventListener("canplaythrough", function () {
 //   duration = music.duration;
@@ -163,4 +162,3 @@
 // // music.addEventListener("canchangevolume", function(){
 // //   volume = music.volume;
 // // }, false);
-// // });

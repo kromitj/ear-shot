@@ -16,4 +16,5 @@ def measure(lat1, lon1, lat2, lon2)
     c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a));
     d = radius * c;
     return d * 1000; # meters
+
 end

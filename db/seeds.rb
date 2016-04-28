@@ -69,12 +69,12 @@ Location.create(song_id: 9, radius: 200,  long: -87.2371722, lat: 41.92345999999
 # Location.create(song_id: 11, radius: 1000,  long: -87.6374870, lat: 41.8896940)
 Listen.create(user_id: 2, song_id: 1,  long: -87.371722, lat: 41.889234599999995)
 
-20.times do
-  Listen.create(user_id: 2, song_id: (1..5).to_a.sample,  long: -87.371722, lat: 41.889234599999995)
+1000.times do
+  Listen.create(user_id: 1, song_id: (6..10).to_a.sample,  long: rand(-87.65..-87.6), lat: rand(41.8..41.9))
 end
 
 20.times do
-  Listen.create(user_id: 1, song_id: (6..10).to_a.sample,  long: -87.71722, lat: 41.4599999995)
+  Listen.create(user_id: 2, song_id: (1..5).to_a.sample,  long: -87.71722, lat: 41.4599999995)
 
 end
 

@@ -11,6 +11,9 @@
  * file per style scope.
  *
  *=require audio
+ *=require heatmap
+ *=require_tree .
+ *=require_self
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
