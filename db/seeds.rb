@@ -7,22 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-248.times do
-  Listen.create(user_id: 1, song_id: 17, lat: rand(41.88..41.89), long: rand(-87.635..-87.6351))
-end
-
-1014.times do
-  Listen.create(user_id: 1, song_id: 17, long: rand(-87.64..-87.63), lat: rand(41.89..41.93))
-end
-
-504.times do
-  Listen.create(user_id: 1, song_id: 19, long: rand(-77.5..-77.47), lat: rand(18.25..18.3))
-end
-
-1520.times do
-  Listen.create(user_id: 1, song_id: 19, long: rand(-87.69..-87.7), lat: rand(41.908409..41.90892))
-end
-
 52.times do
   Favorite.create(song_id: 19, user_id: 1)
 end
@@ -35,6 +19,22 @@ end
   Favorite.create(song_id: 17, user_id: 1)
 end
 
+
+248.times do
+  Listen.create(user_id: 1, song_id: 17, long: rand(-87.6351..-87.635),lat: rand(41.88..41.89))
+end
+
+1014.times do
+  Listen.create(user_id: 1, song_id: 17, long: rand(-87.64..-87.63), lat: rand(41.89..41.93))
+end
+
+504.times do
+  Listen.create(user_id: 1, song_id: 19, long: rand(-77.5..-77.47), lat: rand(18.25..18.3))
+end
+
+1520.times do
+  Listen.create(user_id: 1, song_id: 19, long: rand(-87.7..-87.69), lat: rand(41.908409..41.90892))
+end
 
 
 
