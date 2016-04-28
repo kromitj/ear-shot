@@ -5,6 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="text-center">Welcome <%=@artist.name%></h1>
+
       </div>
     </div>
   </div>
@@ -34,6 +35,14 @@
         <img class="center-block img-rounded" src="<%= @artist.profile_picture %>"
         width="304" height="236">
       </div>
+      <% if current_user.id == @artist.id%>
+      <!-- Button trigger modal -->
+
+    <div class="text-center"><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalHorizontal">
+      Edit Profile
+    </button>
+  </div>
+  <% end %>
       <div class="span4"></div>
     </div>
     <div class="section">
@@ -116,5 +125,39 @@
         <%= render 'songs/new', locals: {song: @song} %>
       </div>
     </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+              <button type="button" class="close"
+                 data-dismiss="modal">
+                     <span aria-hidden="true">&times;</span>
+                     <span class="sr-only">Close</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                  Edit Profile
+              </h4>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body">
+              <%= render template: '/artists/edit'%>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default"
+                      data-dismiss="modal">
+                          Close
+              </button>
+          </div>
+      </div>
   </div>
 </div>
