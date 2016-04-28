@@ -1,6 +1,6 @@
 
 <table class="table">
-  <% current_user.favorites.each do |favorite| %>
+  <% current_user.favorite_active_songs.each do |favorite| %>
   <tr>
     <td>
       <audio id="song<%= favorite.id %>" class="media-songs" src="<%= favorite.song.attachment %>"></audio>
@@ -14,5 +14,6 @@
     <td><%= favorite.song.artist.name %></td>
 
   </tr>
+
   <% end %>
 </table>

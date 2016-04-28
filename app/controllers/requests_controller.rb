@@ -84,8 +84,8 @@ private
 
 
 
-    result = distance_between(@user_loc, @test_loc)
-    puts result
+    # result = distance_between(@user_loc, @test_loc)
+    # puts result
 
 
     active_songs
