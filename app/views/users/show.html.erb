@@ -1,52 +1,29 @@
-<div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="text-center">Welcome <%=@user.username%>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="span4"></div>
-        <div class="span4"></div>
-      </div>
+<article class="greeting container">
+  <section class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Welcome <%=@user.username%>
     </div>
+  </section>
+</article>
 
-    <div class="container">
-      <div class="row">
-        <div class="span4"></div>
-        <div class="span4"></div>
-      </div>
-    </div>
-    <section class="module parallax parallax-1">
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="span4"></div>
-          <div class="span4">
-            <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
-            width="304" height="236">
-          </div>
-          <div class="span4"></div>
-        </div>
-      </div>
-    </div>
-    </section>
-<div class="row">
-  <main class="container">
+<article class="module parallax parallax-1">
+        <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
+        width="304" height="236">
+</article>
 
-    <section class="row user-info-wrapper">
+<main class="container">
+  <article class="row user-info-wrapper">
+
+    <section class="user-media-wrapper col-ex-12 col-sm-6">
       <%= render 'users/user_content'%>
-      <section class="col-ex-12 col-sm-6">
-        <div>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMxrwns8Hvjk3ax8QTAYxei7Ilpen3AM&libraries=drawing,places,visualization&callback=initUserMap" async defer></script>
-            <div id="user-map"></div>
-
-        </div>
-      </section>
     </section>
-  </main>
-</div>
+
+    <section class="user-map-wrapper col-ex-12 col-sm-6">
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMxrwns8Hvjk3ax8QTAYxei7Ilpen3AM&libraries=drawing,places,visualization&callback=initUserMap" async defer></script>
+       <div id="user-map"></div>
+    </section>
+
+  </article>
+</main>
+
