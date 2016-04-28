@@ -1,3 +1,4 @@
+
 class FavoritesController < ApplicationController
   def index
     @user = User.find(params[:user])

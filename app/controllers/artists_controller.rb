@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  skip_before_action :redirect_visitors, only: [:create, :new, :edit, :destroy, :update]
+  before_action :redirect_visitors
 
   def index
     @artists = Artist.all
