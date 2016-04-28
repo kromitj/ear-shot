@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post '/songs/available' => 'songs#available_songs'
 
   resources :requests
-  get '/near/requests' => 'requests#near'
+  get '/nearby/requests' => 'requests#near'
   get '/near/requests/:params' => 'requests#near_songs'
 
   # The priority is based upon order of creation: first created -> highest priority.

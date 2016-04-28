@@ -21,8 +21,12 @@ class UsersController < ApplicationController
       log_in(@user)
       redirect_to "/users/#{@user.id}"
     else
-      @errors = @user.errors.full_messages
-      render 'new'
+      if request.xhr?
+       render :json => {:error => "Invalid user credentials"}
+      else
+        @errors = @user.errors.full_messages
+        render 'new'
+      end
     end
   end
 
@@ -37,8 +41,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      redirect_to "/users/#{@user.id}"
+    if @user.update(user_params)
+      redirect_to @user, notice: 'Your profile was successfully updated.'
     else
       render 'edit'
     end
@@ -55,7 +59,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:f_name, :l_name, :username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:f_name, :l_name, :username, :email, :password, :password_confirmation,:profile_picture)
   end
 
 end

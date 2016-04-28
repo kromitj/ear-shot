@@ -12,13 +12,18 @@ class SessionController < ApplicationController
   end
 
   def create
+    p "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     @user = User.find_by(username: user_params[:username])
     if @user && @user.authenticate(user_params[:password])
       log_in(@user)
       redirect_to user_path(@user)
     else
-      flash[:notice] = 'Incorrect username/password input'
-      redirect_to root_path
+      if request.xhr?
+       render :json => {:error => "Invalid username/password"}
+      else
+        flash[:notice] = 'Incorrect username/password input'
+        redirect_to root_path
+      end
     end
   end
 

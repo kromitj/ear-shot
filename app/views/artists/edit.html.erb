@@ -1,0 +1,34 @@
+<div class="modal-body">
+
+  <%= form_for @artist, :html => {:role => "form"}  do |f| %>
+    <%=render partial: '/shared/flash' %>
+    <%=render partial: '/shared/errors' %>
+    <div class="form-group">
+      <%= f.label "Name" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Hometown" %>
+      <%= f.text_field :hometown, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Bio" %>
+      <%= f.text_field :bio, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Profile Picture" %>
+      <%= f.text_field :profile_picture, class: "form-control" %>
+    </div>
+    <!-- <div class="input-group">
+      <span class="input-group-btn">
+        <span class="btn btn-small btn-primary btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+        <%= f.file_field :profile_picture, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+      </span>
+      <span class="form-control"></span>
+    </div> -->
+    <br>
+    <div class="input-group">
+    <%= f.submit "Edit", class: "btn btn-default" %>
+    </div>
+  <% end %>
+</div>

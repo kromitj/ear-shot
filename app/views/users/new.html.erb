@@ -1,20 +1,38 @@
-<section class="sign-in-form-wrapper">
-  <%= form_for @user do |f| %>
-    <div class="form-group">
-      <!-- <%= f.label :f_name, class: "landing-form-label" %> -->
-      <%= f.text_field :f_name, class: "form-control", :placeholder => "First Name", :style => "text-align: Center" %><br>
+<div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 text-left">
+          <%= form_for @user, :html => {:role => "form", :class => "registration-form"} do |f| %>
 
-      <!--<%= f.label :l_name, class: "landing-form-label" %>-->
-      <%= f.text_field :l_name, class: "form-control", :placeholder => "Last Name", :style => "text-align: Center" %><br>
-      <!--<%= f.label :username, class: "landing-form-label" %>-->
-      <%= f.text_field :username, class: "form-control", :placeholder => "User name", :style => "text-align: Center" %><br>
-      <!--<%= f.label :email, class: "landing-form-label" %>-->
-      <%= f.text_field :email, class: "form-control", :placeholder => "Email", :style => "text-align: Center" %><br>
-      <!--<%= f.label :password, class: "landing-form-label" %>-->
-      <%= f.password_field :password, class: "form-control", :placeholder => "Password", :style => "text-align: Center" %>
+          <div class="form-group">
+            <%= f.text_field :f_name, class: "form-control", placeholder: "First Name" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :l_name, class: "form-control", placeholder: "Last Name" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :username, class: "form-control", placeholder: "Username" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+          </div>
+          <div class="input-group">
+          <%= f.submit "Register", class: "btn btn-default" %>
+          </div>
+          <% end %>
+      </div>
     </div>
-    <div class="form-group">
-      <%= f.submit class: "btn btn-success center-block" %>
-    </div>
-  <% end %>
-</section>
+  </div>
+</div>
