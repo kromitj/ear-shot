@@ -7,10 +7,20 @@
   </section>
 </article>
 
-<article class="module parallax parallax-1">
-        <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
-        width="304" height="236">
-</article>
+<section class="module parallax parallax-1">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="span4"></div>
+        <div class="span4">
+          <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
+          width="304" height="236">
+        </div>
+        <div class="span4"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <main class="container">
   <article class="row user-info-wrapper">
@@ -27,3 +37,60 @@
   </article>
 </main>
 
+          <div class="section">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <% if @user.artists.count > 0 %>
+                  <h1 class="text-center"><%= link_to "Manage Artist Profile", artist_path, class: "nav-link ", id: "artist_show_link" %></h1>
+                  <%else%>
+                  <h1 class="text-center"><%= link_to "Create Artist Profile", new_artist_path%></h1>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<% if current_user.id == @user.id%>
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalHorizontal">
+Edit Profile
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog"
+ aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <button type="button" class="close"
+               data-dismiss="modal">
+                   <span aria-hidden="true">&times;</span>
+                   <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                Edit Profile
+            </h4>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+            <%= render template: '/users/edit'%>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal">
+                        Close
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+<%end%>
