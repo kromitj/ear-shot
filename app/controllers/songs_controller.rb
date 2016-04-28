@@ -52,7 +52,7 @@ class SongsController < ApplicationController
   end
 
 
-    def available_songs
+  def available_songs
     longitude = params[:longitude]
     latitude = params[:latitude]
     # longitude = "1000000000000"
