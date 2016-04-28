@@ -4,6 +4,14 @@ module ApplicationHelper
   dLat = ()
   end
 
+  def determine_user_device
+
+  end
+
+  def user_on_mobile?
+    session[:user_devise] ||=
+  end
+
 end
 
 def measure(lat1, lon1, lat2, lon2)
