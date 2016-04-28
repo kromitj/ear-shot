@@ -1,8 +1,14 @@
+
 <div class="media-left">
   <!-- <h2>Available Songs</h2> -->
+
+
+  <h2>Available Songs</h2>
+
   <ul class="nav nav-pills">
     <li><a class="all-songs-tab" data-toggle="pill" href="#all_songs">All</a></li>
     <li><a data-toggle="pill" href="#favorite_songs">Favorites</a></li>
+    <li><a data-toggle="pill" href="#last_10">Last 10 Plays</a></li>
   </ul>
 
   <div class="tab-content">
@@ -10,5 +16,23 @@
     <div id="favorite_songs" class="tab-pane fade">
       <%= render "/media/favorite_songs" %>
     </div>
+    <div id="last_10" class="tab-pane fade">
+      <table class="table">
+        <% last_5(@user).each do |song|%>
+        <tr>
+          <td>
+            <audio id="song<%= song.id %>" class="media-songs" src="<%= song.song.attachment %>"></audio>
+                <button class="media-play-btn btn btn-default" song="<%= song.id%>"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                </button>
+
+            </button>
+          </td>
+          <td><img class="artwork-thumbnail" src="<%= song.song.artwork %>"></td>
+          <td><%= song.song.name %></td>
+          <td><%= song.song.artist.name %></td>
+
+        </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
-</div>

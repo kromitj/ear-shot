@@ -2,7 +2,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="text-center">Welcome <%=@user.username%></h1>
+            <h1 class="text-center">Welcome <%=@user.username%>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
         <div class="row">
           <div class="span4"></div>
           <div class="span4">
-            <img class="center-block img-rounded" src="https://unsplash.imgix.net/photo-1421986527537-888d998adb74?w=1024&amp;q=50&amp;fm=jpg&amp;s=e633562a1da53293c4dc391fd41ce41d"
+            <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
             width="304" height="236">
           </div>
           <div class="span4"></div>
@@ -44,10 +44,9 @@
         <div>
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMxrwns8Hvjk3ax8QTAYxei7Ilpen3AM&libraries=drawing,places,visualization&callback=initUserMap" async defer></script>
             <div id="user-map"></div>
+
         </div>
       </section>
     </section>
   </main>
 </div>
-
-
