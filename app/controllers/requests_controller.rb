@@ -1,3 +1,4 @@
+
 class RequestsController < ApplicationController
   # 10 miles = 16100 meters
   ACTIVE_RADIUS = 16100

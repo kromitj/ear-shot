@@ -1,3 +1,4 @@
+
 class MobileController < ApplicationController
   def new
     @user = User.new

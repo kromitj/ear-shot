@@ -1,3 +1,4 @@
+
 class CommentsController < ApplicationController
 
   def index
@@ -9,7 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # p params
     @user = User.find(params[:user])
     @song = Song.find(params[:song])
     render :json => @song
