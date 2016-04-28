@@ -22,8 +22,12 @@ class UsersController < ApplicationController
       log_in(@user)
       redirect_to "/users/#{@user.id}"
     else
-      @errors = @user.errors.full_messages
-      render 'new'
+      if request.xhr?
+       render :json => {:error => "Invalid user credentials"}
+      else
+        @errors = @user.errors.full_messages
+        render 'new'
+      end
     end
   end
 

@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4 text-left">
+         <%=render '/shared/errors' %>
 <%= form_for :session, url: session_index_path, :html => {:role => "form"}  do |f| %>
+
 
   <div class="form-group">
   <%= f.text_field :username, class: "form-control", placeholder: "Username" %>
