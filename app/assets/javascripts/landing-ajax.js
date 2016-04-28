@@ -43,7 +43,6 @@ $( document ).ready(function() {
  $("#home-jumbo").on("click", ".form-group input[type=submit]", function(event){
     event.preventDefault();
     var data = $(".form-control").serialize();
-    console.log(data)
     var ajaxRequest = $.ajax({
       type: "POST",
       url: '/session',
@@ -59,7 +58,6 @@ $( document ).ready(function() {
  $("#home-jumbo").on("click", ".input-group input[type=submit]", function(event){
     event.preventDefault();
     var data = $(".form-control").serialize();
-    console.log(data)
     var ajaxRequest = $.ajax({
       type: "POST",
       url: '/users',
@@ -67,7 +65,6 @@ $( document ).ready(function() {
     });
 
     ajaxRequest.done(function(response){
-      console.log(response)
          $("#errors").text(response.error);
 
     });
