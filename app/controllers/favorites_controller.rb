@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
     @favorites = Favorite.where(user_id: @user.id)
     render :json => @favorites, :include => [:artist, :song]
   end
+
   def new
     @comment = Comment.new
   end
