@@ -31,6 +31,19 @@ class ArtistsController < ApplicationController
   end
 
 
+  def edit
+    @artist = Artist.find(params[:id])
+  end
+
+  def update
+    puts "yoo"
+    @artist = Artist.find(params[:id])
+    if @artist.update(artist_params)
+      redirect_to @artist, notice: 'Your profile was successfully updated.'
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @artist = Artist.find(params[:id])
