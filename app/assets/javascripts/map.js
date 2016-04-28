@@ -40,7 +40,7 @@ var x = document.getElementById("demo");
 
    // create new map for heatmap
    songsMap = new google.maps.Map(document.getElementById('heatmap'), {
-    zoom: 15,
+    zoom: 10,
     center: {lat: listenData[0].lat, lng: listenData[0].long},
     mapTypeId: google.maps.MapTypeId.SATELLITE
   });

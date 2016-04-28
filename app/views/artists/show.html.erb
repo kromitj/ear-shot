@@ -5,6 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="text-center">Welcome <%=@artist.name%></h1>
+
       </div>
     </div>
   </div>
@@ -34,6 +35,14 @@
         <img class="center-block img-rounded" src="<%= @artist.profile_picture %>"
         width="304" height="236">
       </div>
+      <% if current_user.id == @artist.id%>
+      <!-- Button trigger modal -->
+
+    <div class="text-center"><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalHorizontal">
+      Edit Profile
+    </button>
+  </div>
+  <% end %>
       <div class="span4"></div>
     </div>
     <div class="section">
@@ -56,10 +65,24 @@
   <div class="row">
     <div class="col-lg-5 col-lg-offset-1">
       <div class="col-md-12">
-        <h2 class="text-center">Active Songs</h2>
+        <h2 class="text-center">Song Activity</h2>
       </div>
-      <div class="col-md-12">
 
+      <div class="col-md-12">
+        <p id="demo"></p>
+          <div id="heatmap-container">
+
+          <div id="heatmap"></div></div>
+          <div id="message"></div>
+          <div id="button-group">
+
+              <%@artist.songs.each do |song|%>
+              <button class="heatmap-button btn btn-primary" id="<%=song.id%>"><%=song.name%></button>
+              <%end%>
+              <button class="btn btn-primary" id="all">ALL</button>
+            </div>
+
+            <h2 class="text-center">Active Songs</h2>
         <table class="table table-condensed">
           <thead>
             <tr>
@@ -84,6 +107,7 @@
             <% end %>
           </tbody>
         </table>
+
       </div>
     </div>
     <div class="col-lg-5">
@@ -103,26 +127,7 @@
     </div>
   </div>
 </div>
-<h3>Song Activity</h3>
-<div id="message"></div>
-<div id="button-group">
-  <div class="section section-primary"><span>Filter HeatMap by Song</span>
-    <%@artist.songs.each do |song|%>
-    <button class="heatmap-button btn btn-primary" id="<%=song.id%>"><%=song.name%></button>
-    <%end%>
-    <button class="btn btn-primary" id="all">ALL</button>
-  </div></div>
 
-
-  <div id="heatmap-container">
-
-  <div id="heatmap"></div></div>
-
-  <% if current_user.id == @artist.id%>
-  <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalHorizontal">
-  Edit Profile
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog"
@@ -156,4 +161,3 @@
       </div>
   </div>
 </div>
-  <%end%>
