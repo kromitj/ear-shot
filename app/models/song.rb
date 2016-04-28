@@ -30,6 +30,7 @@ class Song < ActiveRecord::Base
   #   self.address_components.address[3]["short_name"]
   # end
 
+
   def neighborhood
     self.locations.first.neighborhood
   end
@@ -40,5 +41,14 @@ class Song < ActiveRecord::Base
 
   def expire
     self.locations.first.expiration ||= nil
+  end
+
+  def in_range?(user_lat, user_long)
+    song_lat = self.locations.first.lat.to_f
+    song_long = self.locations.first.long.to_f
+    distance_between = measure(user_lat.to_f, user_long.to_f, song_lat, song_long)
+     song_radius = self.locations.first.radius
+     puts "radius: #{song_radius} distance: #{distance_between }"
+    distance_between < song_radius
   end
 end

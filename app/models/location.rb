@@ -13,4 +13,9 @@ class Location < ActiveRecord::Base
     end
   end
   after_validation :reverse_geocode
+
+  def active?
+    self.expiration > Time.now
+  end
+
 end

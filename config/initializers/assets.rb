@@ -4,6 +4,11 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( map.js )
 Rails.application.config.assets.precompile += %w( audio_player.js )
+Rails.application.config.assets.precompile += %w( heat_map.js )
+Rails.application.config.assets.precompile += %w( userMap.js )
+
+
+
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

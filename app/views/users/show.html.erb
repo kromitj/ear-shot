@@ -1,4 +1,3 @@
-
 <div class="section">
       <div class="container">
         <div class="row">
@@ -36,6 +35,12 @@
       </div>
     </div>
     </section>
+
+ <div class="section">
+  <main class="container">
+    <section class="row user-info-wrapper">
+      <%= render 'users/user_content'%>
+    </section>
     <div class="section">
       <div class="container">
         <div class="row">
@@ -61,7 +66,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <% if @user.artists.count > 0 %>
-                  <h1 class="text-center"><%= link_to "Manage Artist Profile", artist_path, class: "nav-link " %></h1>
+                  <h1 class="text-center"><%= link_to "Manage Artist Profile", artist_path, class: "nav-link ", id: "artist_show_link" %></h1>
                   <%else%>
                   <h1 class="text-center"><%= link_to "Create Artist Profile", new_artist_path%></h1>
                   <%end%>
@@ -72,3 +77,6 @@
         </div>
       </div>
     </div>
+  </main>
+</div>
+<div id="map-container"><div id="user-map"></div></div>

@@ -11,6 +11,9 @@
  * file per style scope.
  *
  *=require audio
+ *=require heatmap
+ *=require_tree .
+ *=require_self
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -144,4 +147,8 @@ section.module.parallax-1 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+.tab-content {
+  height: 400px;
+  overflow-y: scroll;
 }

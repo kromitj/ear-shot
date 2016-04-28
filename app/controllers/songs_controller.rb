@@ -41,7 +41,6 @@ class SongsController < ApplicationController
       render 'show'
     end
   end
-
   def update
     @song = Song.find(params[:id])
   end
@@ -50,6 +49,27 @@ class SongsController < ApplicationController
       puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
       puts "inside ajx"
       render'/artists/_artist_drop_song', layout: false
+  end
+
+
+  def available_songs
+    longitude = params[:longitude]
+    latitude = params[:latitude]
+    # longitude = "1000000000000"
+    # latitude = "1000000000000000"
+    all_songs = Song.all
+    puts "all songs: #{all_songs.count}"
+    @songs = current_user.available_songs(longitude, latitude, all_songs)
+    puts "available songs: #{@songs.count}"
+    render partial: 'songs/all_songs', layout: false
+  end
+
+  def heat_map
+    if request.xhr?
+      @song = Song.find(params[:id])
+      render :json => @song.listens, :only => [:long, :lat]
+    end
+
   end
 
   def destroy
@@ -62,5 +82,4 @@ class SongsController < ApplicationController
     def song_params
       params.require(:song).permit(:name, :artist_id, :attachment, :artwork, :location => [:expiration, :lat, :long, :radius])
     end
-
 end
