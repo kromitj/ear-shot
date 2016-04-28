@@ -20,13 +20,6 @@
       <table class="table">
         <% last_5(@user).each do |song|%>
         <tr>
-          <td class="media-column">
-            <audio id="song<%= song.id %>" class="media-songs" src="<%= song.song.attachment %>"></audio>
-                <button class="media-play-btn btn btn-default" song="<%= song.id%>"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-                </button>
-
-            </button>
-          </td>
           <td class="media-column"><img class="artwork-thumbnail" src="<%= song.song.artwork %>"></td>
           <td class="media-column"><%= song.song.name %></td>
           <td class="media-column"><%= song.song.artist.name %></td>

@@ -56,10 +56,24 @@
   <div class="row">
     <div class="col-lg-5 col-lg-offset-1">
       <div class="col-md-12">
-        <h2 class="text-center">Active Songs</h2>
+        <h2 class="text-center">Song Activity</h2>
       </div>
-      <div class="col-md-12">
 
+      <div class="col-md-12">
+        <p id="demo"></p>
+          <div id="heatmap-container">
+
+          <div id="heatmap"></div></div>
+          <div id="message"></div>
+          <div id="button-group">
+
+              <%@artist.songs.each do |song|%>
+              <button class="heatmap-button btn btn-primary" id="<%=song.id%>"><%=song.name%></button>
+              <%end%>
+              <button class="btn btn-primary" id="all">ALL</button>
+            </div>
+
+            <h2 class="text-center">Active Songs</h2>
         <table class="table table-condensed">
           <thead>
             <tr>
@@ -84,6 +98,7 @@
             <% end %>
           </tbody>
         </table>
+
       </div>
     </div>
     <div class="col-lg-5">
@@ -103,17 +118,3 @@
     </div>
   </div>
 </div>
-<h3>Song Activity</h3>
-<div id="message"></div>
-<div id="button-group">
-  <div class="section section-primary"><span>Filter HeatMap by Song</span>
-    <%@artist.songs.each do |song|%>
-    <button class="heatmap-button btn btn-primary" id="<%=song.id%>"><%=song.name%></button>
-    <%end%>
-    <button class="btn btn-primary" id="all">ALL</button>
-  </div></div>
-
-
-  <div id="heatmap-container">
-
-  <div id="heatmap"></div></div>
