@@ -78,6 +78,9 @@ class SongsController < ApplicationController
     redirect_to @song.artist
   end
 
+
+
+
   private
     def song_params
       params.require(:song).permit(:name, :artist_id, :attachment, :artwork, :location => [:expiration, :lat, :long, :radius])

@@ -1,26 +1,18 @@
-<ul class="list-group">
-  <!-- filter this to be songs based on current location -->
+<table class="table">
   <% @songs.each do |song| %>
-    <li class="list-group-item">
-      <div>
-        <div class="row container-fluid ">
-          <div class="col-sm-3 jumbotron-icon">
-            <!-- <i class="fa fa-play fa-4" aria-hidden="true"></i> -->
-            <!-- audio player here -->
-            <audio id="song<%= song.id %>" class="media-songs" src="<%= song.attachment %>"></audio>
-              <div>
-              <button  class="media-play-btn" song="<%= song.id%>">play</button>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <img class="artwork-thumbnail" src="<%= song.artwork %>">
-          </div>
-          <div class="col-sm-6">
-            <div class="row"><%= song.name %><br></div>
-            <div class="row"><%= song.artist.name %></div>
-          </div>
-        </div>
-      </div>
-    </li>
+  <tr>
+    <td class="media-column">
+      <audio id="song<%= song.id %>" class="media-songs" src="<%= song.attachment %>"></audio>
+          <button class="media-play-btn btn btn-default" song="<%= song.id%>"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+          </button>
+
+      </button>
+    </td>
+    <td class="media-column"><img class="artwork-thumbnail" src="<%= song.artwork %>"></td>
+    <td class="media-column"><%= song.name %></td>
+    <td class="media-column"><%= song.artist.name %></td>
+
+  </tr>
+
   <% end %>
-</ul>
+</table>

@@ -23,7 +23,7 @@ $(document).ready(function() {
           });
 
           ajaxRequest.done(function (availableSongs) {
-            console.log(availableSongs);
+            // console.log(availableSongs);
             $('.all-songs-wrapper').html(availableSongs);
           });
         }

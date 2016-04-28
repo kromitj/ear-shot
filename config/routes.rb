@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   delete '/session/logout' => 'session#destroy'
   get '/songs/drop_song' => 'songs#drop_song'
-
+  post '/songs/available' => 'songs#available_songs'
 
   resources :requests
   get '/near/requests' => 'requests#near'

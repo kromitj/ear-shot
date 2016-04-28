@@ -1,58 +1,41 @@
-<div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="text-center">Welcome <%=@user.username%>
-          </div>
-        </div>
-      </div>
-    </div>
 
+<article class="greeting container">
+  <section class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Welcome <%=@user.username%>
+    </div>
+  </section>
+</article>
+
+<section class="module parallax parallax-1">
+  <div class="section">
     <div class="container">
       <div class="row">
         <div class="span4"></div>
-        <div class="span4"></div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="span4"></div>
-        <div class="span4"></div>
-      </div>
-    </div>
-    <section class="module parallax parallax-1">
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="span4"></div>
-          <div class="span4">
-            <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
-            width="304" height="236">
-          </div>
-          <div class="span4"></div>
+        <div class="span4">
+          <img class="center-block img-rounded" src="<%= @user.profile_picture %>"
+          width="304" height="236">
         </div>
+        <div class="span4"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<main class="container">
+  <article class="row user-info-wrapper">
+
+    <section class="user-media-wrapper col-ex-12 col-sm-6">
+      <%= render 'users/user_content'%>
     </section>
 
- <div class="section">
-  <main class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <%= render 'users/user_content'%>
-      </div>
-      <div class="col-md-6">
-      <div id="user-map"></div>
-    </div>
-    </div>
+    <section class="user-map-wrapper col-ex-12 col-sm-6">
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjMxrwns8Hvjk3ax8QTAYxei7Ilpen3AM&libraries=drawing,places,visualization&callback=initUserMap" async defer></script>
+       <div id="user-map"></div>
+    </section>
 
-
-
-
-    <div class="section">
-      <div class="container">
-        <div class="row">
+  </article>
+</main>
 
           <div class="section">
             <div class="container">
