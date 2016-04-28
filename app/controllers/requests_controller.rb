@@ -22,6 +22,7 @@ class RequestsController < ApplicationController
     end
 
     render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
+
     print return_array
 
 
@@ -73,7 +74,18 @@ private
         active_songs << song
       end
     end
+
+    print return_array
+    render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
+
+
+
+    result = distance_between(@user_loc, @test_loc)
+    puts result
+
+
     active_songs
+
   end
 
   def nearby_songs(song_collection, user_location)
