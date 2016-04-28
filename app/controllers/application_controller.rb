@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # before_action :redirect_visitors
+
   include UsersHelper
   # skip_before_action :verify_authenticity_token
   # Prevent CSRF attacks by raising an exception.
