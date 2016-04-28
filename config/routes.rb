@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :requests
   get '/nearby/requests' => 'requests#near'
   get '/near/requests/:params' => 'requests#near_songs'
+  get '/songs/heat_map/:id' => 'songs#heat_map'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
