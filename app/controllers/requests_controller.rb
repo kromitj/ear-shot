@@ -23,21 +23,22 @@ class RequestsController < ApplicationController
 
     render :json => return_array, :include => {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}}, :include => :locations
 
-    print return_array
 
 
-    # def active_songs
-    active_songs_array = active_songs(@songs)
-    nearby_songs_array = nearby_songs(active_songs_array, @user_loc)
-    render :json => nearby_songs_array, :include {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}, :favorites, :listens}
+    # # def active_songs
+    # active_songs_array = active_songs(@songs)
+    # nearby_songs_array = nearby_songs(active_songs_array, @user_loc)
+    # render :json => nearby_songs_array, :include {:artist => {:only => [:name, :hometown, :bio, :profile_picture]}, :comments => {:only => [:content]}, :favorites, :listens}
   end
+
   def near
     @songs = Song.all
     @artists = Artist.all
-    p @songs
     return_array =[]
 
     @song_list = []
+    p"++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    p params
     @user_loc = [params[:lat], params[:long]]
     @test_loc =[40.7484, 73.9857]
 
@@ -58,6 +59,10 @@ class RequestsController < ApplicationController
     puts result
 
 
+  end
+
+  def near_songs
+    p"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
   end
 
 private
