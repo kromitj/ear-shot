@@ -39,7 +39,7 @@ $( document ).ready(function() {
     });
   }); // end signup click handler
 
-// -------- sign up click btn handler ajax ------------------
+// -------- login click btn handler ajax ------------------
  $("#home-jumbo").on("click", ".form-group input[type=submit]", function(event){
     event.preventDefault();
     var data = $(".form-control").serialize();
@@ -48,25 +48,31 @@ $( document ).ready(function() {
       url: '/session',
       data: data
     });
-
-    ajaxRequest.done(function(response){
-      $("#errors").text(response.error);
+    ajaxRequest.success(function(response){
+      window.location = "users/"+response.user_id
+    })
+    ajaxRequest.fail(function(response){
+      var data = JSON.parse(response.responseText);
+      $("#errors").text(data.error);
     });
 
   });
-
+// ===========================register error handler===================
  $("#home-jumbo").on("click", ".input-group input[type=submit]", function(event){
     event.preventDefault();
     var data = $(".form-control").serialize();
     var ajaxRequest = $.ajax({
       type: "POST",
       url: '/users',
-      data: data
+      data: data,
     });
 
-    ajaxRequest.done(function(response){
-         $("#errors").text(response.error);
-
+   ajaxRequest.success(function(response){
+        window.location = "users/"+response.user_id
+    })
+    ajaxRequest.fail(function(response){
+     var data = JSON.parse(response.responseText);
+         $("#errors").text(data.error);
     });
 
   })

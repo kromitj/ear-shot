@@ -1,12 +1,8 @@
 class UsersController < ApplicationController
 
   # skip_before_action :redirect_visitors, only: [ :create, :new, :edit, :destroy, :update]
-  skip_before_action :verify_authenticity_token
-  def show
-    @songs = Song.all
-    @user = User.find(params[:id])
-  end
-
+  # skip_before_action :verify_authenticity_token
+  # before_action :authenticate!, only: [:show, :edit, :update, :destroy]
   def new
     @user = User.new
     if request.xhr?
@@ -16,14 +12,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @songs = Song.all
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
-      redirect_to "/users/#{@user.id}"
+      if request.xhr?
+        render :json => {:user_id => @user.id, :status => true}
+      else
+        redirect_to "/users/#{@user.id}"
+      end
     else
       if request.xhr?
-       render :json => {:error => "Invalid user credentials"}
+       render :json => {:error => "Invalid user credentials"}, :status => 422
       else
         @errors = @user.errors.full_messages
         render 'new'
