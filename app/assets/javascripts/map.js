@@ -1,6 +1,4 @@
 // $(document).ready(function(){
-
-
   var map;
   var songsMap;
   var circle;
