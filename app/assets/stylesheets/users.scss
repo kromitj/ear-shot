@@ -1,3 +1,13 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#errors{
+  text-align: center;
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom:10px;
+}

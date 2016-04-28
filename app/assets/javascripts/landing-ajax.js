@@ -38,4 +38,44 @@ $( document ).ready(function() {
       }
     });
   }); // end signup click handler
+
+// -------- login click btn handler ajax ------------------
+ $("#home-jumbo").on("click", ".form-group input[type=submit]", function(event){
+    event.preventDefault();
+    var data = $(".form-control").serialize();
+    var ajaxRequest = $.ajax({
+      type: "POST",
+      url: '/session',
+      data: data
+    });
+    ajaxRequest.success(function(response){
+      window.location = "users/"+response.user_id
+    })
+    ajaxRequest.fail(function(response){
+      var data = JSON.parse(response.responseText);
+      $("#errors").text(data.error);
+    });
+
+  });
+// ===========================register error handler===================
+ $("#home-jumbo").on("click", ".input-group input[type=submit]", function(event){
+    event.preventDefault();
+    var data = $(".form-control").serialize();
+    var ajaxRequest = $.ajax({
+      type: "POST",
+      url: '/users',
+      data: data,
+    });
+
+   ajaxRequest.success(function(response){
+        window.location = "users/"+response.user_id
+    })
+    ajaxRequest.fail(function(response){
+     var data = JSON.parse(response.responseText);
+         $("#errors").text(data.error);
+    });
+
+  })
+
+
 });
