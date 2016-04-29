@@ -17,7 +17,7 @@
           width="304" height="236">
         </div>
         <div class="text-center">
-          <% if current_user.id == @user.id%>
+          <% if current_user.artists.first.id == @user.id%>
           <!-- Button trigger modal -->
           <button class="btn black-button btn-lg" data-toggle="modal" data-target="#myModalHorizontal">
           Edit Profile
