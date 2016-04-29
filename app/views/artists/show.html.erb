@@ -35,7 +35,7 @@
         <img class="center-block img-rounded" src="<%= @artist.profile_picture %>"
         width="304" height="236">
       </div>
-      <% if current_user.id == @artist.id%>
+      <% if current_user.artists.first.id == @artist.id%>
       <!-- Button trigger modal -->
 
     <div class="text-center"><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalHorizontal">
