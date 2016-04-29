@@ -16,7 +16,7 @@
   <%= f.label "Art Work" %>
   <div class="input-group">
     <span class="input-group-btn">
-      <span class="btn btn-small btn-primary btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+      <span class="btn btn-small black-button btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
       <%= f.file_field :artwork, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
     </span>
     <span class="form-control"></span>
@@ -24,7 +24,7 @@
   <%= f.label "Song File" %>
   <div class="input-group">
     <span class="input-group-btn">
-      <span class="btn btn-small btn-primary btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+      <span class="btn btn-small black-button btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
       <%= f.file_field :attachment, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
     </span>
     <span class="form-control"></span>
@@ -38,5 +38,5 @@
     <%=location.hidden_field (:radius) %>
   </div>
   <%end%>
-  <%= f.submit "DROP", class:"btn btn-primary" %>
+  <%= f.submit "DROP", class:"btn black-button" %>
 <% end %>
