@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_digest
       t.string :profile_picture
+      # :default => 'https://www.drupal.org/files/profile_default.png'
 
       t.timestamps null: false
     end
