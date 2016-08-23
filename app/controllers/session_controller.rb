@@ -4,8 +4,7 @@ class SessionController < ApplicationController
   def new
     @user = User.new
     if request.xhr?
-      puts "in xhr for session new"
-      render 'session/_new', layout: false
+      render '/session/_new', layout: false
     else
       render 'new'
     end

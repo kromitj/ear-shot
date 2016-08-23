@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     if request.xhr?
-      render '_new', layout: false
+      render '/users/_new', layout: false
     else
       render 'new'
     end
