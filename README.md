@@ -1,10 +1,10 @@
-# Earshot
+# [Earshot](https://earshot-app.herokuapp.com/)
 
 A location-based music streaming app.  Earshot allows users to discover exclusive local music.  It allows artists to connect with nearby audiences, promote special events, and give back to their communities.  Artists can upload a song through the web platform by selecting a location with a radius of up to 5km by simply clicking and dragging on an embedded Google map.  If users are within the selected radius, the song will become available in their mobile app.
 
 Earshot was conceived as a creative way to share music, a guerilla marketing tool for artists, and a tool for bringing back the intimacy, self-ownership, and pride in local music that web-based music sharing platforms continue to deteriorate.
 
-This app was built in 7 days as a final project of [DevBootcamp](https://devbootcamp.com)'s 2016 Chicago Sea Lions.  We hope this app serves as a proof of concept and that similar technologies may be integrated with previously established services such as SoundCloud, Spotify or Apple Music. There is still much work to do on this app so we've decided to keep the repository private, but would still like to display the work we have thus far. Check it out on [Heroku](https://evening-gorge-29235.herokuapp.com), or take a look at the photos below.
+This app was built in 7 days as a final project of [DevBootcamp](https://devbootcamp.com)'s 2016 Chicago Sea Lions.  We hope this app serves as a proof of concept and that similar technologies may be integrated with previously established services such as SoundCloud, Spotify or Apple Music. There is still much work to do on this app so we've decided to keep the repository private, but would still like to display the work we have thus far. Check it out on [Heroku](https://earshot-app.herokuapp.com/), or take a look at the photos below.
 
 ## Web Overview
 
